@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Sample HTML Page</title>
+</head>
+<body>
+
+    <header>
+        <h1>Título general</h1>
+    </header>
+    
+    <nav>
+        <p>Zona de navegación de la página</p>
+    </nav>
+
+    <main>
+        <h2>Welcome to the Sample HTML Page</h2>
+        <p>This is a simple example of an HTML document. <strong>ENLACE:</strong> <a title="Ir al enlace (google)" href="https://www.google.com/">click aquí.</a></p>
+        
+        <h4>Lista de la compra:</h4>
+        <ul>    
+            <li>Pan</li>
+            <li>LECHE</li>
+            <li>Huevos</li>
+        </ul>
+
+        <h4>Clasificación de la liga</h4>
+        <ol>    
+            <li>Madrid</li>
+            <li>Barça</li>
+            <li>Elche</li>
+        </ol>
+
+        <table>
+            <caption>Tabla de ejemplo</caption>
+            <thead>
+                <tr>
+                    <th>Equipo</th>
+                    <th>Puntos</th>
+                    <th>Partidos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Madrid</td>
+                    <td>45</td>
+                    <td>19</td>
+                </tr>
+                <tr>
+                    <td>Barça</td>
+                    <td>42</td>
+                    <td>19</td>
+                </tr>
+                <tr>
+                    <td>Elche</td>
+                    <td>20</td>
+                    <td>19</td>
+                </tr>
+                <tr></tr>
+                <tr>
+                    <td colspan="2">Partidos jugados:</td>
+                    <td>57</td>
+                </tr>
+            </tbody>
+        </table>
+    <br/>
+    <h4>Formulario de ejemplo</h4>
+    <form action="#" method="post">
+        <label>
+            Nombre: <input type="text" name="nombre" placeholder="Tu nombre" required/>
+        </label>
+        <br/><br/>
+        <label>
+            Email: <input type="email" name="email" placeholder="Tu email" required/>
+        </label>
+
+        <br/><br/>
+        <label>
+            Contraseña: <input type="password" name="password" placeholder="Tu contraseña" required/>
+        </label>
+        <br/><br/>
+        <label>
+            Ciudad: <select name="ciudad" required>
+                        <option value="">--Selecciona--</option>
+                        <option value="madrid">Madrid</option>
+                        <option value="barcelona">Barcelona</option>
+                        <option value="valencia">Valencia</option>
+                    </select>
+        </label>
+        <br/><br/>
+        <fieldset>
+            <label><input type="radio" name="genero" value="m"> Masculino</label>
+            <label><input type="radio" name="genero" value="f"> Femenino</label>
+            <label><input type="radio" name="genero" value="o"> No especifico</label>
+        </fieldset>
+        <br/><br/>
+        <label>
+            <input type="checkbox" name="terminos" required> Acepto los términos y condiciones
+        </label>
+       <label>
+            <input type="checkbox" name="terminos" required> Acepto recibir publicidad
+       </label> 
+        <br/><br/>
+        <button type="submit">Enviar</button>
+        <button type="reset">Borrar</button>
+        <button>Botón normal</button>
+        <button onclick="alert('Hola!')">Botón con JS</button>
+    </form>
+
+    <br/>
+
+    <h4>Imagen de ejemplo</h4>
+    <img src="https://isen.es/wp-content/uploads/2021/05/favicon-isen.png" alt="Logo del ISEN"></img>
+    </main>
+
+    <footer>
+        <p>Pie de página normal y <small>pie de pagina pequeñito.</small></p>
+    </footer>
+
+    
+</body>
+</html>

@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Guía comentada de HTML — Desarrollo de Interfaces Web</title>
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;line-height:1.5;padding:24px;max-width:1000px;margin:auto;color:#111}
+    pre{background:#f4f4f4;padding:12px;border-radius:6px;overflow:auto}
+    code{background:#eef;padding:2px 6px;border-radius:4px}
+    section.example{border-left:4px solid #2b6cb0;padding:12px;margin:18px 0;border-radius:6px;background:#fbfdff}
+    .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:12px}
+    .note{font-size:0.9rem;color:#555}
+    table{border-collapse:collapse;width:100%}
+    table, th, td{border:1px solid #ccc}
+    th, td{padding:6px;text-align:left}
+    img.demo{max-width:200px;height:auto;border:1px solid #ddd;padding:4px;border-radius:6px}
+  </style>
+</head>
+
+<body>
+  <!--
+    Este fichero HTML está pensado para ser leído en clase: contiene ejemplos visibles
+    y comentarios dentro del código (etiquetas !-- y --) que explican cada parte.
+
+    Consejo docente: abre este archivo en un navegador y también en un editor de código
+    para ver los comentarios y probar cambios en vivo.
+  -->
+
+  <header>
+    <h1>Guía comentada de HTML</h1>
+    <p class="note">Breve recorrido por la estructura y las etiquetas más usadas en HTML</p>
+  </header>
+
+  <!--
+    Estructura básica de un documento HTML:
+    1. DOCTYPE declara que esto es HTML5.
+    2. &lt;html&gt; contiene todo; el atributo lang ayuda a accesibilidad y SEO.
+    3. &lt;head&gt; incluye metadatos (charset, viewport, título, enlaces a CSS/JS).
+    4. &lt;body&gt; contiene lo que verá el usuario (contenido y estructura semántica).
+  -->
+
+  <nav class="toolbar" aria-label="Índice rápido">
+    <a href="#estructura">Estructura</a>
+    <a href="#textos">Textos</a>
+    <a href="#enlaces">Enlaces</a>
+    <a href="#listas">Listas</a>
+    <a href="#tablas">Tablas</a>
+    <a href="#formularios">Formularios</a>
+    <a href="#media">Imágenes y media</a>
+  </nav>
+
+  <main>
+
+    <section id="estructura" class="example">
+      <h2>Estructura semántica</h2>
+      <p>HTML dispone de etiquetas semánticas que ayudan a organizar el contenido y mejorar la accesibilidad.</p>
+      <!-- Ejemplo de etiquetas semánticas principales -->
+      <pre>&lt;header&gt; &lt;nav&gt; &lt;main&gt; &lt;section&gt; &lt;article&gt; &lt;aside&gt; &lt;footer&gt;</pre>
+
+      <article>
+        <h3>Ejemplo práctico</h3>
+        <p>Ves cómo estamos usando &lt;header&gt; arriba, &lt;nav&gt; para el índice y &lt;main&gt; para el contenido principal.</p>
+      </article>
+    </section>
+
+    <section id="textos" class="example">
+      <h2>Textos: párrafos, encabezados y énfasis</h2>
+      <!-- Párrafos -->
+      <p><!-- El elemento &lt;p&gt; define un párrafo. -->Este es un párrafo (&lt;p&gt;). Los párrafos agrupan bloques de texto relacionados.</p>
+
+      <!-- Encabezados -->
+      <h3><!-- &lt;h1&gt;..&lt;h6&gt; representan la jerarquía de títulos. -->Encabezados (h1-h6): uso y jerarquía</h3>
+
+      <!-- Énfasis -->
+      <p>Texto en <strong>negrita</strong> (&lt;strong&gt;) y <em>cursiva</em> (&lt;em&gt;). Usa <code>&lt;small&gt;</code> para notas pequeñas: <small>nota al pie</small>.</p>
+    </section>
+
+    <section id="enlaces" class="example">
+      <h2>Enlaces (anchor)</h2>
+      <p><!-- &lt;a href="URL"&gt;texto&lt;/a&gt; crea un enlace. -->
+      <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noopener">Enlace a documentación de referencia (MDN)</a>
+      </p>
+
+      <!-- Enlace interno -->
+      <p>Enlace interno a la sección de formularios: <a href="#formularios">Ir a Formularios</a></p>
+
+      <!-- Atributos importantes: href, target, rel, title -->
+      <pre>&lt;a href="https://ejemplo" target="_blank" rel="noopener" title="Ir a ejemplo"&gt;Enlace&lt;/a&gt;</pre>
+    </section>
+
+    <section id="listas" class="example">
+      <h2>Listas</h2>
+      <p>Existen listas ordenadas (&lt;ol&gt;), no ordenadas (&lt;ul&gt;) y de definición (&lt;dl&gt;).</p>
+
+      <h4>Lista no ordenada (&lt;ul&gt;)</h4>
+      <ul>
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+      </ul>
+
+      <h4>Lista ordenada (&lt;ol&gt;)</h4>
+      <ol>
+        <li>Primer paso</li>
+        <li>Segundo paso</li>
+      </ol>
+
+      <h4>Lista de definición (&lt;dl&gt;)</h4>
+      <dl>
+        <dt>HTML</dt>
+        <dd>Lenguaje de marcado para estructurar páginas web.</dd>
+      </dl>
+    </section>
+
+    <section id="tablas" class="example">
+      <h2>Tablas</h2>
+      <p>Las tablas se usan para datos tabulares. No deben usarse para maquetación visual.</p>
+
+      <table>
+        <caption>Ejemplo de tabla simple</caption>
+        <thead>
+          <tr><th>Producto</th><th>Cantidad</th><th>Precio</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Ordenador</td><td>2</td><td>1200€</td></tr>
+          <tr><td>Ratón</td><td>5</td><td>15€</td></tr>
+        </tbody>
+        <tfoot>
+          <tr><td colspan="2">Total</td><td>2430€</td></tr>
+        </tfoot>
+      </table>
+
+      <!-- Estructura: table > thead/tbody/tfoot > tr > th/td -->
+    </section>
+
+    <section id="formularios" class="example">
+      <h2>Formularios</h2>
+      <p>Los formularios permiten que el usuario introduzca datos. &lt;form&gt; agrupa controles (inputs, select, textarea, botones...)</p>
+
+      <!-- Formulario de ejemplo con labels, inputs y datalist -->
+      <form action="#" method="post" onsubmit="event.preventDefault(); alert('Formulario enviado (simulado)');">
+
+        <!-- label conecta con el control mediante for=id -->
+        <label for="nombre">Nombre:</label><br>
+        <input id="nombre" name="nombre" type="text" placeholder="Tu nombre" required><br><br>
+
+        <!-- input email y pattern básico -->
+        <label for="email">Email:</label><br>
+        <input id="email" name="email" type="email" placeholder="usuario@ejemplo.com" required><br><br>
+
+        <!-- textarea (cuadro de texto de varias líneas) -->
+        <label for="comentarios">Comentarios:</label><br>
+        <textarea id="comentarios" name="comentarios" rows="4" cols="40" placeholder="Escribe aquí tus comentarios..."></textarea><br><br>
+
+        <!-- Datalist: opciones sugeridas para un input de texto -->
+        <label for="ciudad">Ciudad (sugerencias con datalist):</label><br>
+        <input id="ciudad" name="ciudad" list="ciudades" placeholder="Elige o escribe">
+        <datalist id="ciudades">
+          <option value="Madrid">
+          <option value="Barcelona">
+          <option value="Valencia">
+        </datalist>
+        <br><br>
+
+        <!-- Select y opciones -->
+        <label for="asignatura">Asignatura favorita:</label><br>
+        <select id="asignatura" name="asignatura">
+          <option value="frontend">Desarrollo de Interfaces Web</option>
+          <option value="backend">Desarrollo Backend</option>
+          <option value="bdd">Bases de Datos</option>
+        </select>
+        <br><br>
+
+        <!-- Inputs de tipo radio y checkbox -->
+        <fieldset>
+          <legend>Género</legend>
+          <label><input type="radio" name="genero" value="m"> Masculino</label>
+          <label><input type="radio" name="genero" value="f"> Femenino</label>
+          <label><input type="radio" name="genero" value="o"> Otro</label>
+        </fieldset>
+        <br>
+
+        <label><input type="checkbox" name="acepta" required> Acepto los términos</label>
+        <br><br>
+
+        <!-- Meter: representa una medición conocida (ej. progreso, capacidad) -->
+        <label for="nivel">Nivel de curso (meter):</label>
+        <meter id="nivel" min="0" max="100" low="30" high="80" optimum="90" value="65">65%</meter>
+        <p class="note">El elemento &lt;meter&gt; es para valores con un rango (no para progreso indeterminado, donde usaríamos &lt;progress&gt;).</p>
+
+        <br>
+        <!-- Botones: submit y reset, y un button que ejecuta JS -->
+        <button type="submit">Enviar</button>
+        <button type="reset">Restablecer</button>
+        <button type="button" onclick="document.getElementById('comentarios').value='Ejemplo: texto insertado por JS.'">Insertar texto</button>
+      </form>
+
+    </section>
+
+    <section id="media" class="example">
+      <h2>Imágenes y multimedia</h2>
+      <p>La etiqueta &lt;img&gt; inserta imágenes. Siempre usar <code>alt</code> para accesibilidad.</p>
+
+      <!-- Ejemplo de imagen local o externa (aquí usamos una imagen pública) -->
+      <img class="demo" src="https://upload.wikimedia.org/wikipedia/commons/6/61/HTML5_logo_and_wordmark.svg" alt="Logotipo HTML5">
+
+      <p class="note">Atributos importantes: <code>src</code> (ruta), <code>alt</code> (texto alternativo), <code>width</code>, <code>height</code>, <code>loading="lazy"</code>.</p>
+
+      <!-- Audio y video (solo referencia breve) -->
+      <p>También existen &lt;audio&gt; y &lt;video&gt; para multimedia con controles nativos.</p>
+    </section>
+
+    <section id="accesibilidad" class="example">
+      <h2>Buenas prácticas y accesibilidad</h2>
+      <ul>
+        <li>Usa etiquetas semánticas para estructurar (header, nav, main, footer).</li>
+        <li>Incluye atributos <code>alt</code> en imágenes y <code>label</code> asociados a inputs.</li>
+        <li>Evita usar tablas para maquetación; son para datos tabulares.</li>
+        <li>Prueba el teclado: los formularios y enlaces deben ser navegables sin ratón.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <aside>
+
+    <h2>Recursos adicionales</h2>
+    <ul>
+      <li><a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank" rel="noopener">MDN Web Docs - HTML</a></li>
+      <li><a href="https://html.spec.whatwg.org/multipage/" target="_blank" rel="noopener">Especificación HTML Living Standard</a></li>
+      <li><a href="https://www.w3.org/TR/html52/" target="_blank" rel="noopener">W3C HTML5.2 Specification</a></li>
+      <li><a href="https://validator.w3.org/" target="_blank" rel="noopener">Validador de HTML del W3C</a></li>
+    </ul>
+  </aside>
+
+  <footer style="margin-top:18px;border-top:1px solid #eee;padding-top:12px">
+    <p class="note">Archivo de ejemplo creado para la asignatura <strong>Desarrollo de Interfaces Web</strong>. Puedes modificarlo en clase para mostrar cómo cambian los resultados al editar el HTML.</p>
+  </footer>
+
+  <!-- Pequeño script para mostrar cómo JS puede interactuar con el DOM (no obligatorio para HTML básico) -->
+  <script>
+    // Ejemplo: actualizar el valor del meter con teclado (solo demostración)
+    document.addEventListener('DOMContentLoaded', function(){
+      const meter = document.getElementById('nivel');
+      // cuando el usuario cambia la selección del select, actualizamos el meter (demostración)
+      const sel = document.getElementById('asignatura');
+      sel.addEventListener('change', function(){
+        // Asignamos un valor arbitrario según la selección
+        meter.value = sel.value === 'frontend' ? 75 : (sel.value === 'backend' ? 55 : 40);
+      });
+    });
+  </script>
+</body>
+</html>
