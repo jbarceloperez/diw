@@ -1,0 +1,66 @@
+/* styles.css */
+
+/* Estilo global del cuerpo */
+body {
+    font-family: Arial, sans-serif;
+    margin:   50px;
+    background-color: #989898;
+}
+
+h1, h2 {
+    color: #29005e;
+}
+
+/* Ejemplo de contenedor relativo */
+.contenedor {
+    position: relative;
+    border: 2px solid #333;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+/* Elemento posicionado absolutamente dentro del contenedor */
+.caja-absoluta {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+/* Ejemplo de orden y disposición */
+.bloques {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.bloques div {
+    flex: 1;
+    background-color: #ddd;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* Clase para texto destacado */
+.destacado {
+    color: darkred;
+    font-weight: bold;
+}
+
+/* Estilo para un elemento concreto */
+#elemento-especial {
+    font-size: 20pt;
+    color: blue;
+    text-decoration: underline;
+}
+
+.parrafo {
+    font-size: 18pt;
+    color: green;
+    font-style: italic;
+}
