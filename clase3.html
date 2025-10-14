@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clase 3 - Multimedia y CSS</title>
+
+  <!-- ======== ESTILOS INTERNOS ======== -->
+  <style>
+    /* Estilo global del cuerpo */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f5f5f5;
+    }
+
+    h1, h2 {
+      color: #333;
+    }
+
+    /* Ejemplo de contenedor relativo */
+    .contenedor {
+      position: relative;
+      border: 2px solid #333;
+      padding: 20px;
+      margin-top: 20px;
+      background-color: #fff;
+    }
+
+    /* Elemento posicionado absolutamente dentro del contenedor */
+    .caja-absoluta {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #4CAF50;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+    }
+
+    /* Ejemplo de orden y disposición */
+    .bloques {
+      display: flex;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .bloques div {
+      flex: 1;
+      background-color: #ddd;
+      text-align: center;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    /* Clase para texto destacado */
+    .destacado {
+      color: darkred;
+      font-weight: bold;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Clase 3: Multimedia y estilos CSS</h1>
+
+  <p>En esta página aprenderemos a insertar <strong>imágenes</strong>, <strong>audio</strong> y <strong>vídeo</strong>,
+  además de comprender cómo se ordenan los elementos web y cómo aplicar <em>estilos CSS</em>.</p>
+
+  <!-- ======== 1. MULTIMEDIA ======== -->
+  <h2>1. Inserción de multimedia</h2>
+
+  <h3>Imagen</h3>
+  <p>Podemos insertar una imagen con la etiqueta <code>&lt;img&gt;</code>:</p>
+  <img src="https://imgs.search.brave.com/KG5WF95X3KUoOawg_riCYgzFRHtr_aoOKQYtrE82_PM/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5pc3RvY2twaG90/by5jb20vaWQvMTMy/NDM1NjQ1OC92ZWN0/b3IvcGljdHVyZS1p/Y29uLXBob3RvLWZy/YW1lLXN5bWJvbC1s/YW5kc2NhcGUtc2ln/bi1waG90b2dyYXBo/LWdhbGxlcnktbG9n/by13ZWItaW50ZXJm/YWNlLWFuZC5qcGc_/cz02MTJ4NjEyJnc9/MCZrPTIwJmM9Wm1Y/TzRtU2dORFB6RFJY/LUY4T0tDZm1NcXFI/cHFNVjZqaU5pMDBZ/ZTdyRT0" 
+       alt="Imagen de ejemplo" title="Ejemplo de imagen" width="306" height="245">
+
+  <h3>Audio</h3>
+  <p>Insertamos audio con la etiqueta <code>&lt;audio&gt;</code> y el atributo <code>controls</code>:</p>
+  <audio controls muted>
+    <source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg">
+    Tu navegador no soporta el elemento de audio.
+  </audio>
+
+  <h3>Vídeo</h3>
+  <p>Del mismo modo, podemos incluir un vídeo:</p>
+  <video width="320" height="180" controls autoplay muted loop>
+    <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+    Tu navegador no soporta el elemento de vídeo.
+  </video>
+
+  <!-- ======== 2. POSICIONAMIENTO ======== -->
+  <h2>2. Posicionamiento y orden de elementos</h2>
+
+  <div class="contenedor">
+    <p>Este es un <span class="destacado">contenedor con posición relativa</span>.
+    Dentro de él hay un elemento con posición absoluta.</p>
+
+    <div class="caja-absoluta">
+      Caja absoluta
+    </div>
+  </div>
+
+  <h3>Distribución de bloques en línea</h3>
+  <div class="bloques">
+    <div>Bloque 1</div>
+    <div>Bloque 2</div>
+    <div>Bloque 3</div>
+  </div>
+
+  <!-- ======== 3. CSS ======== -->
+  <h2>3. Introducción a los estilos CSS</h2>
+
+  <p>Existen tres formas de aplicar estilos CSS:</p>
+  <ul>
+    <li><strong>En línea:</strong> dentro del propio elemento HTML con el atributo <code>style</code>.</li>
+    <li><strong>Internos:</strong> en la sección <code>&lt;style&gt;</code> del documento (como este ejemplo).</li>
+    <li><strong>Externos:</strong> enlazando un archivo <code>.css</code> con <code>&lt;link&gt;</code>.</li>
+  </ul>
+
+  <h3>Ejemplo de estilo en línea</h3>
+  <p style="color:blue; font-weight:bold;">Este texto usa un estilo CSS en línea.</p>
+
+  <h3>Ejemplo de enlace a hoja de estilo externa</h3>
+  <p>Para enlazar un archivo externo, usaríamos:</p>
+  <pre>
+  &lt;link rel="stylesheet" href="estilos.css"&gt;
+  </pre>
+
+  <p>En ese archivo <code>estilos.css</code> podríamos definir reglas como:</p>
+  <pre>
+  body {
+    background-color: #e0f7fa;
+  }
+  h1 {
+    color: darkblue;
+  }
+  </pre>
+
+</body>
+</html>

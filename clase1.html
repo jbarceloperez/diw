@@ -15,6 +15,13 @@
     table, th, td{border:1px solid #ccc}
     th, td{padding:6px;text-align:left}
     img.demo{max-width:200px;height:auto;border:1px solid #ddd;padding:4px;border-radius:6px}
+    .tarjeta {
+      border: 1px solid #2e2d2d;
+      padding: 10px;
+      border-radius: 8px;
+      background-color: rgb(35, 246, 165);
+    }
+
   </style>
 </head>
 
@@ -184,12 +191,7 @@
         <label><input type="checkbox" name="acepta" required> Acepto los términos</label>
         <br><br>
 
-        <!-- Meter: representa una medición conocida (ej. progreso, capacidad) -->
-        <label for="nivel">Nivel de curso (meter):</label>
-        <meter id="nivel" min="0" max="100" low="30" high="80" optimum="90" value="65">65%</meter>
-        <p class="note">El elemento &lt;meter&gt; es para valores con un rango (no para progreso indeterminado, donde usaríamos &lt;progress&gt;).</p>
 
-        <br>
         <!-- Botones: submit y reset, y un button que ejecuta JS -->
         <button type="submit">Enviar</button>
         <button type="reset">Restablecer</button>
@@ -221,6 +223,74 @@
       </ul>
     </section>
 
+
+    <div class="tarjeta" id="zona">
+      <h2>Perfil de usuario</h2>
+      <p>Nombre: Juan Perez</p>
+      <p>Edad: 25 años</p>
+    </div>
+    <br>
+      <!-- ==== FORMULARIO AMPLIADO ==== -->
+      <form>
+        <label>Nombre:</label>
+        <input type="text" placeholder="Tu nombre completo">
+        <br><br>
+        <label>Teléfono:</label>
+        <input type="tel" placeholder="600123456" pattern="[0-9]{9}">
+        <br><br>
+        <label>Fecha de nacimiento:</label>
+        <input type="date">
+        <br><br>
+        <label>Hora preferida de contacto:</label>
+        <input type="time">
+        <br><br>
+        <label>Nivel de satisfacción:</label>
+        <input type="range" min="0" max="100" value="50">
+        <br><br>
+        <label>Edad:</label>
+        <input type="number" min="0" max="120" value="30">
+        <br><br>
+        <label>Búsqueda:</label>
+        <input type="search" placeholder="Buscar algo...">
+        <br><br>
+         <!-- Meter: representa una medición conocida (ej. progreso, capacidad) -->
+        <label for="nivel">Nivel de curso (meter):</label>
+        <meter id="nivel" min="0" max="100" low="30" high="80" optimum="90" value="80">30%</meter>
+        <p class="note">El elemento &lt;meter&gt; es para valores con un rango (no para progreso indeterminado, donde usaríamos &lt;progress&gt;).</p>
+        <br><br>
+        <button type="submit">Guardar cambios</button>
+      </form>
+
+      <p style="text-align:center; margin-top:20px;">
+        <img src="https://imgs.search.brave.com/UAfQNeJyakRkWciqoAav4H0QUp33MOOspOQfF3FKM-A/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9jZG4u/dmVjdG9yc3RvY2su/Y29tL2kvNTAwcC8y/Ni80MC9wcm9maWxl/LXBsYWNlaG9sZGVy/LWltYWdlLWdyYXkt/c2lsaG91ZXR0ZS12/ZWN0b3ItMjIxMjI2/NDAuanBn" 
+              alt="Foto de perfil" width="50" height="50">
+        <br>
+        (Haz clic derecho sobre la imagen para ver el menú)
+      </p>
+
+    <!-- ==== MENÚ CONTEXTUAL PERSONALIZADO ==== -->
+    <ul id="menu">
+      <li>Ver imagen</li>
+      <li>Editar perfil</li>
+      <li>Eliminar</li>
+    </ul>
+
+    <script>
+      // === SCRIPT DEL MENÚ CONTEXTUAL ===
+      const zona = document.getElementById('zona');
+      const menu = document.getElementById('menu');
+
+      zona.addEventListener('contextmenu', (e) => {
+        e.preventDefault(); // evita el menú del navegador
+        menu.style.display = 'block';
+        menu.style.left = e.pageX + 'px';
+        menu.style.top = e.pageY + 'px';
+      });
+
+      document.addEventListener('click', () => {
+        menu.style.display = 'none'; // cierra al hacer clic fuera
+      });
+    </script>
   </main>
 
   <aside>
