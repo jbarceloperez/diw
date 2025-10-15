@@ -9,19 +9,25 @@
     <style>
         /* ===== ESTILOS DE TEXTO ===== */
         .texto-basico {
-            color: #004c99;                  /* color del texto */
-            text-align: justify;             /* alineación del texto */
+            color: rgb(0, 77, 153);        /* color del texto */
+            text-align: left;                /* alineación del texto */
             text-decoration: underline;      /* subrayado */
             text-transform: capitalize;      /* capitaliza cada palabra */
             letter-spacing: 1px;             /* espacio entre letras */
+            word-spacing: 15px;              /* espacio entre palabras */
+            font-weight: bold;               /* negrita */
+            font-size: 16px;                 /* tamaño de la fuente */
+            font-style: italic;              /* cursiva */
+            font-family: Georgia;            /* tipo de fuente */
+            /* src: url("fuente.woff") format("woff"); /* fuente personalizada */
         }
 
         .texto-sombra {
             color: #333;
-            text-shadow: 2px 2px 4px #aaa;   /* sombra del texto */
+            text-shadow: 2px 2px 4px #888080;   /* sombra del texto */
         }
 
-        /* ===== ESTILOS DE FUENTES ===== */
+        /* ===== ESTILOS DE FUENTES ===== */    
         .fuente-serif {
             font-family: "Times New Roman", serif;
             font-size: 18px;
@@ -45,12 +51,28 @@
             list-style-type: disc;
         }
 
+        .lista-disc li {
+            color: #004c99;
+            font-weight: bold;
+        }
+
         .lista-cuadro {
             list-style-type: square;
         }
 
+        .lista-cuadro li {
+            color: #009933;
+            font-style: italic;
+        }
+
         .lista-romano {
             list-style-type: upper-roman;
+        }
+
+        .lista-romano li {
+            color: #cc3300;
+            background-color: #9ebdeb;
+            text-transform: uppercase;
         }
 
         .lista-imagen {
@@ -62,11 +84,13 @@
             border-collapse: collapse;    /* fusiona bordes */
             width: 80%;
             margin: 10px auto;
+            border: 2px solid black;
+            border-radius: 10px;
         }
 
         th, td {
-            border: 1px solid #004c99;
-            padding: 8px;
+            border: 1px solid #6f706d;
+            padding: 5px;
             text-align: center;
         }
 
@@ -79,19 +103,22 @@
         }
 
         tr:nth-child(odd) {
-            background-color: #cecece;    /* filas pares */
+            background-color: #cecece;    /* filas impares */
         }
 
         tr:hover {
-            background-color: hsla(192, 86%, 57%, 0.582);    /* efecto hover */
+            background-color: cyan;    /* efecto hover */
         }
 
         /* ===== ESTILOS EN FORMULARIOS ===== */
         form {
-            width: 50%;
-            margin: 20px auto;
+            width: 60%;
+            margin: 30px auto;  /* auto centra el formulario */
             background-color: #f9f9f9;
-            border: 2px solid #ccc;
+            border-top: 2px solid #ccc;
+            border-bottom: 2px solid #ccc;
+            border-left: 2px solid #a72323;
+            border-right: 2px solid #ca1313;
             border-radius: 8px;
             padding: 20px;
         }
@@ -128,7 +155,7 @@
         }
 
         button:hover {
-            background-color: #0066cc;
+            background-color: #84bffa;
         }
     </style>
 </head>
@@ -202,6 +229,7 @@
                 <tr><td>Ana</td><td>23</td><td>Madrid</td></tr>
                 <tr><td>Pedro</td><td>30</td><td>Barcelona</td></tr>
                 <tr><td>Lucía</td><td>27</td><td>Valencia</td></tr>
+                <tr><td>Carlos</td><td>35</td><td>Sevilla</td></tr>
             </tbody>
         </table>
         <p>La tabla muestra bordes, colores alternos y un efecto <em>hover</em> al pasar el ratón.</p>
