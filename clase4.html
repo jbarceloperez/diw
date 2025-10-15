@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 4: Principales propiedades de CSS</title>
+
+    <!-- Estilos internos -->
+    <style>
+        /* ===== ESTILOS DE TEXTO ===== */
+        .texto-basico {
+            color: #004c99;                  /* color del texto */
+            text-align: justify;             /* alineación del texto */
+            text-decoration: underline;      /* subrayado */
+            text-transform: capitalize;      /* capitaliza cada palabra */
+            letter-spacing: 1px;             /* espacio entre letras */
+        }
+
+        .texto-sombra {
+            color: #333;
+            text-shadow: 2px 2px 4px #aaa;   /* sombra del texto */
+        }
+
+        /* ===== ESTILOS DE FUENTES ===== */
+        .fuente-serif {
+            font-family: "Times New Roman", serif;
+            font-size: 18px;
+            font-style: italic;
+        }
+
+        .fuente-sans {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: 16px;
+        }
+
+        .fuente-mono {
+            font-family: "Courier New", monospace;
+            background-color: #f0f0f0;
+            padding: 4px;
+        }
+
+        /* ===== ESTILOS EN LISTAS ===== */
+        .lista-disc {
+            list-style-type: disc;
+        }
+
+        .lista-cuadro {
+            list-style-type: square;
+        }
+
+        .lista-romano {
+            list-style-type: upper-roman;
+        }
+
+        .lista-imagen {
+            list-style-image: url("icono.png");
+        }
+
+        /* ===== ESTILOS EN TABLAS ===== */
+        table {
+            border-collapse: collapse;    /* fusiona bordes */
+            width: 80%;
+            margin: 10px auto;
+        }
+
+        th, td {
+            border: 1px solid #004c99;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #cce0ff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;    /* filas pares */
+        }
+
+        tr:nth-child(odd) {
+            background-color: #cecece;    /* filas pares */
+        }
+
+        tr:hover {
+            background-color: hsla(192, 86%, 57%, 0.582);    /* efecto hover */
+        }
+
+        /* ===== ESTILOS EN FORMULARIOS ===== */
+        form {
+            width: 50%;
+            margin: 20px auto;
+            background-color: #f9f9f9;
+            border: 2px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #aaa;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: #004c99;
+            outline: none;
+            background-color: #eef6ff;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 10px 15px;
+            background-color: #004c99;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0066cc;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Clase 4: Principales propiedades de CSS</h1>
+
+    <!-- ===================== ESTILOS DE TEXTO ===================== -->
+    <section>
+        <h2>1. Estilos de texto</h2>
+        <p class="texto-basico">
+            Este párrafo tiene aplicados distintos estilos de texto: color, subrayado, alineación justificada, espaciado entre letras y capitalización de palabras.
+        </p>
+        <p class="texto-sombra">
+            También podemos aplicar sombras al texto para destacar títulos o elementos importantes.
+        </p>
+    </section>
+
+    <!-- ===================== ESTILOS DE FUENTES ===================== -->
+    <section>
+        <h2>2. Estilos de fuente</h2>
+        <p class="fuente-serif">
+            Esta fuente es de tipo <strong>serif</strong>, tradicional y con remates.
+        </p>
+        <p class="fuente-sans">
+            Esta fuente es <strong>sans-serif</strong>, más moderna y limpia.
+        </p>
+        <p class="fuente-mono">
+            Esta fuente es <strong>monoespaciada</strong>, típica en código o terminales.
+        </p>
+    </section>
+
+    <!-- ===================== ESTILOS EN LISTAS ===================== -->
+    <section>
+        <h2>3. Estilos en listas</h2>
+
+        <ul class="lista-disc">
+            <li>Elemento con viñeta tipo disc</li>
+            <li>Otro elemento</li>
+        </ul>
+
+        <ul class="lista-cuadro">
+            <li>Elemento con viñeta cuadrada</li>
+            <li>Otro elemento</li>
+        </ul>
+
+        <ol class="lista-romano">
+            <li>Elemento I</li>
+            <li>Elemento II</li>
+        </ol>
+
+        <ul class="lista-imagen">
+            <li>Elemento con imagen personalizada</li>
+            <li>Otro elemento</li>
+        </ul>
+    </section>
+
+    <!-- ===================== ESTILOS EN TABLAS ===================== -->
+    <section>
+        <h2>4. Estilos en tablas</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Edad</th>
+                    <th>Ciudad</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>Ana</td><td>23</td><td>Madrid</td></tr>
+                <tr><td>Pedro</td><td>30</td><td>Barcelona</td></tr>
+                <tr><td>Lucía</td><td>27</td><td>Valencia</td></tr>
+            </tbody>
+        </table>
+        <p>La tabla muestra bordes, colores alternos y un efecto <em>hover</em> al pasar el ratón.</p>
+    </section>
+
+    <!-- ===================== ESTILOS EN FORMULARIOS ===================== -->
+    <section>
+        <h2>5. Estilos en formularios</h2>
+
+        <form>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" placeholder="Introduce tu nombre">
+
+            <label for="email">Correo electrónico:</label>
+            <input type="email" id="email" placeholder="ejemplo@correo.com">
+
+            <label for="comentarios">Comentarios:</label>
+            <textarea id="comentarios" rows="3"></textarea>
+
+            <label for="opcion">Selecciona una opción:</label>
+            <select id="opcion">
+                <option value="a">Opción A</option>
+                <option value="b">Opción B</option>
+            </select>
+
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+</body>
+</html>
