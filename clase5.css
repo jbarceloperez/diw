@@ -1,0 +1,434 @@
+/* ============================
+   clase_css3_estilos.css
+   Hoja de estilos para la demo de la clase CSS3
+   Comentarios incluidos para explicar cada bloque
+   ============================ */
+
+/* ===== Reset / base ligera ===== */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  color: #1f2937;
+  background: #f7fafc;
+}
+.container {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+/* ===== Encabezado y layout ===== */
+.page-header {
+  text-align: center;
+  padding: 20px 0 10px;
+}
+.page-header .lead {
+  color: #475569;
+  margin-top: 6px;
+}
+
+.panel {
+  background: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  box-shadow: 0 1px 4px rgba(2, 6, 23, 0.06);
+}
+.demo-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  align-items: stretch;
+}
+.card {
+  flex: 1 1 260px;
+  padding: 12px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+  border: 1px solid #e6eef6;
+}
+
+/* Small utility */
+.code {
+  font-family: monospace;
+  font-size: 0.9rem;
+  background: #fff7ed;
+  padding: 6px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-top: 8px;
+}
+
+/* ============================
+   1. SOMBRAS
+   text-shadow y box-shadow
+   ============================ */
+
+/* Text shadows: sintaxis: offset-x offset-y blur color
+   Se pueden encadenar varias sombras separadas por comas
+*/
+.shadow-text .shadow-sample {
+  display: inline-block;
+  font-size: 1.15rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); /* sombra suave hacia abajo-derecha */
+  color: #111827;
+}
+
+/* Múltiples sombras para efecto "neon" o relieve */
+.shadow-multi-sample {
+  font-size: 1.15rem;
+  color: #fff;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #bbb, 0 3px 0 #aaa, 0 4px 0 #999;
+  padding: 4px 8px;
+  background: #111827;
+  border-radius: 4px;
+}
+
+/* Box shadow: offset-x offset-y blur spread color [inset]
+   inset => sombra interior
+*/
+.box {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+.box-elevated {
+  background: #ffffff;
+  box-shadow: 4px 8px 5px rgba(2, 6, 23, 0.08); /* sombra externa suave */
+}
+.box-deep {
+  background: #fff;
+  box-shadow: 0 12px 30px rgba(255, 3, 3, 0.292);
+}
+
+/* ============================
+   2. GRADIENTES
+   linear-gradient, radial-gradient, repeating-*
+   ============================ */
+
+/* Linear gradient básico */
+.grad-linear {
+  background: linear-gradient(45deg, #ff7a18 0%, #af002d 100%);
+  color: rgb(255, 255, 255);
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  text-align: center;
+}
+
+/* Radial gradient: círculo centrado, colores y stops */
+.grad-radial {
+  background: radial-gradient(circle at 50% 50%, #89f7fe 0%, #66a6ff 60%);
+  color: #073b4c;
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+/* Repeating linear gradient: patrón repetido */
+.grad-repeating {
+  background: repeating-linear-gradient(
+    45deg,
+    #e6eef6 0 12px,
+    #dfeafc 12px 24px
+  );
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+/* Patrón complejo: combinando varios gradientes para crear "tiles" */
+.grad-pattern {
+  /* Combina dos gradientes para crear un patrón tipo "rejilla" */
+  background-image: linear-gradient(
+      90deg,
+      rgba(255, 167, 44, 0.5) 1px,
+      transparent 1px
+    ),
+    linear-gradient(rgba(132, 101, 255, 0.5) 1px, transparent 1px);
+  background-size: 24px 24px; /* tamaño del "tile" */
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+/* Explicación: se puede jugar con la orientación, colores y stops para obtener efectos */
+.grad-pattern p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+/* ============================
+   3. FONDOS MÚLTIPLES
+   ============================ */
+
+/* Ejemplo: gradiente encima de imagen. El primer fondo es el más cerca del usuario (front) */
+.bg-sample {
+  min-height: 120px;
+  border-radius: 6px;
+  /* Primer background declarado => front layer.
+     Segundo => back layer (imagen) */
+  background-image: linear-gradient(
+      180deg,
+      rgba(43, 135, 255, 0.5),
+      rgba(255, 255, 255, 0.1)
+    ),
+    url("https://placehold.co/600x400");
+  background-size: cover, 600px 200px; /* tamaño para cada layer */
+  background-position: center center, center center;
+  background-repeat: no-repeat, no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ejemplo con dos imágenes: controlar posición y tamaño de cada una */
+.bg-sample-2 {
+  min-height: 120px;
+  border-radius: 6px;
+  background-image: url("bg1.webp"),
+    url("bg2.webp");
+  background-position: right 20px top 20px, left 20px bottom 20px;
+  background-size: 300px 120px, 120px 80px;
+  background-repeat: no-repeat, no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f172a;
+}
+
+/* Nota: el orden importa: la primera imagen queda encima */
+
+/* ============================
+   4. TRANSICIONES
+   ============================ */
+
+/* Grow button: transición de fondo y transform */
+.trans-btn {
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #0ea5a4;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 200ms ease 10ms;
+}
+.trans-btn:hover {
+  background: #059e93;
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(2, 6, 23, 0.12);
+}
+
+/* Caja con transición múltiple: color, size y border-radius */
+.trans-box {
+  width: 120px;
+  height: 60px;
+  background: #f8fafc;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 250ms ease, height 250ms ease, background-color 200ms ease,
+    transform 200ms ease;
+}
+.trans-box:hover {
+  width: 200px;
+  height: 80px;
+  background: #e0f2fe;
+  transform: translateY(-6px);
+}
+
+/* ============================
+   5. TRANSFORMACIONES
+   ============================ */
+
+/* Transforms demo: aplicamos transform en :hover para ver el efecto */
+.tf {
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 6px;
+  background: #fff;
+  border: 1px solid #e6eef6;
+  text-align: center;
+}
+
+/* scale, con transición para suavizar */
+.scale-sample {
+  transition: transform 180ms ease;
+}
+.scale-sample:hover {
+  transform: scale(1.15);
+}
+
+/* translate: desplaza sin cambiar el flujo */
+.translate-sample {
+  transition: transform 200ms ease;
+}
+.translate-sample:hover {
+  transform: translate(20px, 10px);
+}
+
+/* rotate */
+.rotate-sample {
+  transition: transform 220ms ease;
+  display: inline-block;
+}
+.rotate-sample:hover {
+  transform: rotate(18deg);
+}
+
+/* skew (inclinar) */
+.skew-sample {
+  transition: transform 220ms ease;
+  display: inline-block;
+}
+.skew-sample:hover {
+  transform: skewX(18deg);
+}
+
+/* matrix: matrix(a,b,c,d,tx,ty)
+   - a = scaleX
+   - b = skewY
+   - c = skewX
+   - d = scaleY
+   - tx, ty = translateX, translateY
+   Usar con precaución; útil para combinaciones precisas.
+*/
+.matrix-sample {
+  transition: transform 250ms ease;
+  display: inline-block;
+}
+.matrix-sample:hover {
+  transform: matrix(1, 0.3, -0.2, 1, 0, 0);
+}
+
+/* transform-origin controla el punto de referencia */
+.tf-samples .tf {
+  transform-origin: center;
+}
+
+/* ============================
+   6. ANIMACIONES (@keyframes)
+   ============================ */
+
+/* Animación pulse: escala suave y vuelve */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(59, 130, 246, 0);
+  }
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 8px 30px rgba(59, 130, 246, 0.12);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(59, 130, 246, 0);
+  }
+}
+.anim.pulse {
+  display: inline-block;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #0f172a;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+/* Rotación continua */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.anim.spin {
+  display: inline-block;
+  padding: 12px;
+  border-radius: 50%;
+  background: linear-gradient(90deg, #ff7a18, #af002d);
+  color: white;
+  width: 56px;
+  height: 56px;
+  line-height: 32px;
+  text-align: center;
+  animation: spin 1.8s linear infinite;
+}
+
+/* Animación compleja: translate + rotate + color */
+@keyframes complexMove {
+  0% {
+    transform: translateX(0) rotate(0deg);
+    background: linear-gradient(90deg, #fef3c7, #fde68a);
+  }
+  25% {
+    transform: translateX(30px) rotate(5deg);
+    background: linear-gradient(90deg, #ffecd1, #ffd59e);
+  }
+  50% {
+    transform: translateX(0) rotate(-3deg);
+    background: linear-gradient(90deg, #ffe4e6, #ffc9d6);
+  }
+  75% {
+    transform: translateX(-30px) rotate(3deg);
+    background: linear-gradient(90deg, #e6f7ff, #cfefff);
+  }
+  100% {
+    transform: translateX(0) rotate(0deg);
+    background: linear-gradient(90deg, #fef3c7, #fde68a);
+  }
+}
+.anim.complex {
+  padding: 12px 18px;
+  border-radius: 8px;
+  display: inline-block;
+  animation: complexMove 5s ease-in-out infinite;
+}
+
+/* ============================
+   Pequeños estilos estéticos del demo
+   ============================ */
+.page-footer {
+  text-align: center;
+  padding: 12px 0 32px;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+.lead {
+  font-size: 1rem;
+}
+.explain {
+  color: #475569;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+}
+h2 {
+  margin-top: 0;
+}
+
+/* Responsive: asegurar que en pantallas pequeñas las columnas apilen */
+@media (max-width: 800px) {
+  .demo-row {
+    flex-direction: column;
+  }
+}

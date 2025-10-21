@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Clase CSS3 — Sombras, Gradientes, Fondos Múltiples, Transiciones, Transformaciones y Animaciones</title>
+
+  <!-- Enlace a la hoja de estilos externa -->
+  <link rel="stylesheet" href="clase5.css">
+</head>
+<body>
+  <header class="page-header">
+    <h1>Clase CSS3: efectos avanzados</h1>
+    <p class="lead">Sombras, gradientes, fondos múltiples, transiciones, transformaciones y animaciones — ejemplos comentados.</p>
+  </header>
+
+  <main class="container">
+
+    <!-- SOMBRAS -->
+    <section id="sombras" class="panel">
+      <h2>1. Sombras (text-shadow y box-shadow)</h2>
+      <p class="explain">Las sombras en texto y cajas se crean con <code>text-shadow</code> y <code>box-shadow</code>. Se pueden encadenar varias sombras.</p>
+
+      <div class="demo-row">
+        <div class="card demo-shadow-text">
+          <h3>Text shadow</h3>
+          <p class="shadow-text">Sombra simple: <span class="shadow-sample">Texto con sombra</span></p>
+          <p class="shadow-multi">Sombra múltiple: <span class="shadow-multi-sample">Texto con sombras apiladas</span></p>
+        </div>
+
+        <div class="card demo-shadow-box">
+          <h3>Box shadow</h3>
+          <div class="box box-elevated">Sombra simple</div>
+          <div class="box box-deep">Sombra profunda</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- GRADIENTES -->
+    <section id="gradientes" class="panel">
+      <h2>2. Gradientes</h2>
+      <p class="explain">Gradientes lineales, radiales, repetidos y patrones construidos con gradientes.</p>
+
+      <div class="demo-row">
+        <div class="card grad-linear">
+          <h3>Linear gradient (lineal)</h3>
+          <p class="code" style="color: rgb(2, 0, 47)">background: linear-gradient(90deg, #ff7a18, #af002d);</p>
+        </div>
+
+        <div class="card grad-radial">
+          <h3>Radial gradient (radial)</h3>
+          <p class="code">background: radial-gradient(circle at center, #89f7fe, #66a6ff);</p>
+        </div>
+
+        <div class="card grad-repeating">
+          <h3>Repeating gradient (repetido)</h3>
+          <p class="code">repeating-linear-gradient(0deg, #eee 0 10px, #ddd 10px 20px);</p>
+        </div>
+
+        <div class="card grad-pattern">
+          <h3>Patrón con gradientes</h3>
+          <p class="code">combinar múltiples gradientes para hacer un patrón</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FONDOS MÚLTIPLES -->
+    <section id="fondos-multiples" class="panel">
+      <h2>3. Fondos múltiples</h2>
+      <p class="explain">Se pueden aplicar múltiples fondos en una única propiedad <code>background</code> o con propiedades separadas. El primer fondo especificado está en el frente.</p>
+
+      <div class="demo-row">
+        <div class="card bg-multiple">
+          <h3>Imagen + Gradiente</h3>
+          <div class="bg-sample">Gradiente encima de imagen</div>
+        </div>
+
+        <div class="card bg-multiple-2">
+          <h3>Varias imágenes</h3>
+          <div class="bg-sample-2">Dos imágenes (posición y tamaño distintos)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRANSICIONES -->
+    <section id="transiciones" class="panel">
+      <h2>4. Transiciones</h2>
+      <p class="explain">Con <code>transition</code> animamos la interpolación entre estados (p. ej. al <code>:hover</code>).</p>
+
+      <div class="demo-row">
+        <div class="card trans-demo">
+          <h3>Transición simple</h3>
+          <button class="btn trans-btn">Hover para animar</button>
+        </div>
+
+        <div class="card trans-demo-2">
+          <h3>Transición múltiple</h3>
+          <div class="box trans-box">Hover me</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRANSFORMACIONES -->
+    <section id="transformaciones" class="panel">
+      <h2>5. Transformaciones (transform)</h2>
+      <p class="explain">Transformaciones 2D y 3D: <code>scale</code>, <code>translate</code>, <code>rotate</code>, <code>skew</code> y <code>matrix()</code>. Se combinan con <code>transform-origin</code>.</p>
+
+      <div class="demo-row">
+        <div class="card tf-demo">
+          <h3>Scale / Translate / Rotate / Skew</h3>
+          <div class="tf-samples">
+            <div class="tf scale-sample">scale(1.2)</div>
+            <div class="tf translate-sample">translate(20px,10px)</div>
+            <div class="tf rotate-sample">rotate(15deg)</div>
+            <div class="tf skew-sample">skewX(15deg)</div>
+          </div>
+        </div>
+
+        <div class="card tf-matrix">
+          <h3>Matrix (transform matrix)</h3>
+          <p class="code">transform: matrix(a, b, c, d, tx, ty);</p>
+          <div class="tf matrix-sample">matrix(1, 0.3, -0.2, 1, 0, 0)</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ANIMACIONES -->
+    <section id="animaciones" class="panel">
+      <h2>6. Animaciones (keyframes)</h2>
+      <p class="explain">Con <code>@keyframes</code> definimos animaciones. Usamos la propiedad <code>animation</code> para configurar duración, iteración, dirección, etc.</p>
+
+      <div class="demo-row">
+        <div class="card anim-demo">
+          <h3>Pulso / escala</h3>
+          <div class="anim pulse">Pulse</div>
+        </div>
+
+        <div class="card anim-demo-2">
+          <h3>Rotación infinita</h3>
+          <div class="anim spin">Spin</div>
+        </div>
+
+        <div class="card anim-path">
+          <h3>Animación compleja</h3>
+          <div class="anim complex">Compleja</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONCLUSIONES -->
+    <section class="panel">
+      <h2>Conclusión y notas</h2>
+      <ul>
+        <li>Acuerdate de cómo afecta la propiedad al flujo (por ejemplo, transform no afecta el flujo, mientras que position sí).</li>
+        <li>Usa transiciones para micro-interacciones y animaciones para movimientos más complejos o repetidos.</li>
+        <li>Combina efectos para lograr diseños atractivos y modernos.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="page-footer">
+    <p>Material para la asignatura — Desarrollo de Interfaces Web</p>
+  </footer>
+</body>
+</html>
