@@ -76,7 +76,7 @@ body {
 .shadow-text .shadow-sample {
   display: inline-block;
   font-size: 1.15rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25); /* sombra suave hacia abajo-derecha */
+  text-shadow: 20px -20px 10px rgb(0, 0, 0); /* sombra suave hacia abajo-derecha */
   color: #111827;
 }
 
@@ -84,7 +84,7 @@ body {
 .shadow-multi-sample {
   font-size: 1.15rem;
   color: #fff;
-  text-shadow: 0 1px 0 #ccc, 0 2px 0 #bbb, 0 3px 0 #aaa, 0 4px 0 #999;
+  text-shadow: 0 1px 0 #ccc, 1px 2px 0 #bbb, 2px 3px 0 #aaa, 3px 4px 0 #999;
   padding: 4px 8px;
   background: #111827;
   border-radius: 4px;
@@ -116,7 +116,7 @@ body {
 
 /* Linear gradient básico */
 .grad-linear {
-  background: linear-gradient(45deg, #ff7a18 0%, #af002d 100%);
+  background: linear-gradient(90deg, #ff7a18 0%, #af002d 100%);
   color: rgb(255, 255, 255);
   min-height: 110px;
   display: flex;
@@ -128,7 +128,7 @@ body {
 
 /* Radial gradient: círculo centrado, colores y stops */
 .grad-radial {
-  background: radial-gradient(circle at 50% 50%, #89f7fe 0%, #66a6ff 60%);
+  background: radial-gradient(circle at center, #89f7fe 0%, #66a6ff 60%);
   color: #073b4c;
   min-height: 110px;
   display: flex;
@@ -140,9 +140,11 @@ body {
 /* Repeating linear gradient: patrón repetido */
 .grad-repeating {
   background: repeating-linear-gradient(
-    45deg,
-    #e6eef6 0 12px,
-    #dfeafc 12px 24px
+    60deg,
+    #7e93a8 0 12px,
+    #dfeafc 12px 14px,
+    #23d088d6 14px 16px,
+    #06f73a 16px 28px
   );
   min-height: 110px;
   display: flex;
@@ -159,7 +161,8 @@ body {
       rgba(255, 167, 44, 0.5) 1px,
       transparent 1px
     ),
-    linear-gradient(rgba(132, 101, 255, 0.5) 1px, transparent 1px);
+    linear-gradient(0deg, rgba(132, 101, 255, 0.5) 1px, transparent 1px),
+    radial-gradient(circle at center, #89f7fe 0%, #66a6ff17 20%);
   background-size: 24px 24px; /* tamaño del "tile" */
   min-height: 110px;
   display: flex;
@@ -229,11 +232,11 @@ body {
   color: white;
   font-weight: 600;
   cursor: pointer;
-  transition: all 200ms ease 10ms;
+  transition: all 500ms ease 10ms;
 }
 .trans-btn:hover {
   background: #059e93;
-  transform: translateY(-4px);
+  transform: translateY(-10px);
   box-shadow: 0 10px 20px rgba(2, 6, 23, 0.12);
 }
 
@@ -252,7 +255,7 @@ body {
 .trans-box:hover {
   width: 200px;
   height: 80px;
-  background: #e0f2fe;
+  background: #59baf6c7;
   transform: translateY(-6px);
 }
 
@@ -275,7 +278,7 @@ body {
   transition: transform 180ms ease;
 }
 .scale-sample:hover {
-  transform: scale(1.15);
+  transform: scale(1.2);
 }
 
 /* translate: desplaza sin cambiar el flujo */
@@ -283,16 +286,16 @@ body {
   transition: transform 200ms ease;
 }
 .translate-sample:hover {
-  transform: translate(20px, 10px);
+  transform: translate(30px, 10px);
 }
 
 /* rotate */
 .rotate-sample {
-  transition: transform 220ms ease;
+  transition: transform 1s ease;
   display: inline-block;
 }
 .rotate-sample:hover {
-  transform: rotate(18deg);
+  transform: rotate(450deg);
 }
 
 /* skew (inclinar) */
@@ -301,7 +304,7 @@ body {
   display: inline-block;
 }
 .skew-sample:hover {
-  transform: skewX(18deg);
+  transform: skewX(45deg);
 }
 
 /* matrix: matrix(a,b,c,d,tx,ty)
@@ -317,7 +320,7 @@ body {
   display: inline-block;
 }
 .matrix-sample:hover {
-  transform: matrix(1, 0.3, -0.2, 1, 0, 0);
+  transform: matrix(1, 0.8, -0.5, 1, 45, -45);
 }
 
 /* transform-origin controla el punto de referencia */
@@ -350,7 +353,7 @@ body {
   border-radius: 8px;
   background: #eff6ff;
   color: #0f172a;
-  animation: pulse 1.6s ease-in-out infinite;
+  animation: pulse 1.5s ease-in-out infinite;
 }
 
 /* Rotación continua */

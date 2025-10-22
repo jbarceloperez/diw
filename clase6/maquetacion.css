@@ -1,0 +1,124 @@
+/* Estilos generales para toda la página */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header, footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 15px 0;
+}
+
+section.layout {
+  margin: 40px auto;
+  width: 80%;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.2);
+}
+
+section.layout h2 {
+  text-align: center;
+  color: #0066cc;
+}
+
+/* -------------------------------------------------------
+   Layout 1: Clásico con cabecera, contenido y pie
+------------------------------------------------------- */
+#layout1 .contenedor {
+  border: 2px solid #0066cc;
+}
+
+#layout1 .cabecera,
+#layout1 .pie {
+  background-color: #0066cc;
+  color: white;
+  padding: 10px;
+  text-align: center;
+}
+
+#layout1 .cuerpo {
+  display: flex; /* permite que menú y contenido estén lado a lado */
+}
+
+#layout1 .menu {
+  width: 25%;
+  background-color: #cce5ff;
+  padding: 10px;
+}
+
+#layout1 .contenido {
+  width: 75%;
+  padding: 10px;
+}
+
+/* -------------------------------------------------------
+   Layout 2: Tres columnas
+------------------------------------------------------- */
+.tres-columnas {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.tres-columnas .columna {
+  background-color: #eee;
+  border: 1px solid #aaa;
+  flex: 1;
+  margin: 5px;
+  padding: 20px;
+  border-radius: 6px;
+}
+
+/* -------------------------------------------------------
+   Layout 3: Posicionamiento absoluto y centrado
+------------------------------------------------------- */
+.centrado {
+  position: relative;
+  height: 200px;
+  background-color: #e8f4f8;
+  border: 2px dashed #00aaff;
+}
+
+.centrado .caja {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); /* centra la caja */
+  background-color: #00aaff;
+  color: white;
+  padding: 20px 40px;
+  border-radius: 8px;
+}
+
+/* -------------------------------------------------------
+   Layout 4: Maquetación moderna con Flexbox
+------------------------------------------------------- */
+.flexbox {
+  display: flex;
+  justify-content: space-around; /* distribuye espacio */
+  align-items: center;            /* centra verticalmente */
+  height: 150px;
+  background-color: #f0f8ff;
+  border: 2px solid #0099cc;
+  border-radius: 8px;
+}
+
+.flexbox .bloque {
+  background-color: #0099cc;
+  color: white;
+  padding: 20px;
+  border-radius: 6px;
+  transition: transform 0.3s;
+}
+
+/* Añadimos un efecto al pasar el ratón */
+.flexbox .bloque:hover {
+  transform: scale(1.1);
+}

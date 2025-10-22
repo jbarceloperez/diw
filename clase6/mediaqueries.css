@@ -1,0 +1,133 @@
+/* =============================
+   Estilos base (pantallas grandes)
+   ============================= */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #4a90e2;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+nav {
+    background-color: #333;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 0 1rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    display: flex;
+    margin: 20px;
+}
+
+.contenido {
+    flex: 3;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.lateral {
+    flex: 1;
+    padding: 20px;
+    background-color: #ddd;
+}
+
+footer {
+    text-align: center;
+    background-color: #222;
+    color: white;
+    padding: 10px;
+}
+
+/* =============================
+   MEDIA QUERIES
+   ============================= */
+
+/* 1️⃣ Tablet: Cuando el ancho máximo sea 900px */
+@media (max-width: 900px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    main {
+        flex-direction: column;
+    }
+
+    .lateral {
+        order: -1; /* el aside se muestra antes del contenido */
+    }
+
+    header {
+        background-color: #5c6bc0; /* cambiamos el color del encabezado */
+    }
+}
+
+/* 2️⃣ Móviles: Cuando el ancho máximo sea 600px */
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* reducimos el tamaño del texto */
+    }
+
+    header h1 {
+        font-size: 1.2em;
+    }
+
+    nav ul {
+        display: block;
+        text-align: center;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
+
+    .contenido, .lateral {
+        width: 100%;
+        padding: 10px;
+    }
+
+    footer {
+        font-size: 0.8em;
+    }
+}
+
+/* 3️⃣ Orientación del dispositivo */
+@media (orientation: landscape) {
+    header {
+        background-color: #8e44ad; /* cambia el color en horizontal */
+    }
+}
+
+/* 4️⃣ Impresión: estilos solo para imprimir */
+@media print {
+    nav, footer {
+        display: none; /* ocultamos navegación y pie */
+    }
+
+    body {
+        color: black;
+        background: white;
+    }
+}
