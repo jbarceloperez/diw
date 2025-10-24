@@ -1,0 +1,141 @@
+/* ===== ESTILOS GENERALES ===== */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #f6f6f6;
+    color: #333;
+}
+
+/* ===== CABECERA ===== */
+header {
+    text-align: center;
+    color: rgba(180, 145, 79, 0.726);
+    padding: 30px;
+}
+
+/* ===== MENÚ DE NAVEGACIÓN ===== */
+nav {
+    background-color: #333;
+}
+
+nav a {
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+}
+
+
+/* ===== SECCIÓN HERO ===== */
+.hero {
+    text-align: center;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+}
+
+.hero button {
+    background-color: #c59d5f;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+}
+
+/* ===== PRODUCTOS DESTACADOS ===== */
+.destacados {
+    padding: 40px;
+    text-align: center;
+    background-color: white;
+}
+
+
+.producto {
+    background-color: #fafafa;
+    padding: 20px;
+    transition: transform 0.3s;
+    gap: 20px;
+}
+
+
+.producto .precio {
+    color: #c59d5f;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.producto button {
+    background-color: #333;
+    color: white;
+    padding: 8px 15px;
+    cursor: pointer;
+}
+
+
+/* ===== OFERTAS ===== */
+.ofertas {
+    background: #f5f5f5;
+    padding: 50px;
+    text-align: center;
+    color: #333;
+}
+
+.banner-oferta {
+    background-color: white;
+    display: inline-block;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    animation: parpadeo 3s infinite alternate;
+}
+
+
+/* ===== GALERÍA ===== */
+.galeria {
+    text-align: center;
+    padding: 40px;
+    background-color: #fff;
+}
+
+.imagenes img {
+    margin: 10px;
+}
+
+/* ===== FORMULARIO ===== */
+.formulario {
+    background-color: #fafafa;
+    padding: 40px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+label {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+
+
+/* ===== PIE DE PÁGINA ===== */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: #c59d5f;
+    text-decoration: none;
+}
