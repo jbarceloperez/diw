@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplos de Filas y Columnas con Bootstrap</title>
+  <!-- Importamos Bootstrap desde CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container mt-4">
+
+    <h1 class="text-center mb-4">Distribución de Filas y Columnas en Bootstrap</h1>
+
+    <!-- =================== EJEMPLO 1 =================== -->
+    <h3>Ejemplo 1: Tres columnas iguales</h3>
+    <div class="row text-center mb-4">
+      <div class="col bg-primary text-white p-3">Columna 1</div>
+      <div class="col bg-success text-white p-3">Columna 2</div>
+      <div class="col bg-danger text-white p-3">Columna 3</div>
+    </div>
+
+    <!-- =================== EJEMPLO 2 =================== -->
+    <h3>Ejemplo 2: Columnas con tamaño personalizado</h3>
+    <div class="row text-center mb-4">
+      <div class="col-3 bg-warning p-3">col-3</div>
+      <div class="col-6 bg-info p-3">col-6</div>
+      <div class="col-3 bg-secondary text-white p-3">col-3</div>
+    </div>
+
+    <!-- =================== EJEMPLO 3 =================== -->
+    <h3>Ejemplo 3: Columnas con tamaños responsivos</h3>
+    <p>En pantallas pequeñas se apilan, pero en pantallas medianas y grandes se distribuyen.</p>
+    <div class="row text-center mb-4">
+      <div class="col-sm-12 col-md-6 col-lg-3 bg-danger text-white p-3">col-sm-12 col-md-6 col-lg-3</div>
+      <div class="col-sm-12 col-md-6 col-lg-3 bg-success text-white p-3">col-sm-12 col-md-6 col-lg-3</div>
+      <div class="col-sm-12 col-md-6 col-lg-3 bg-primary text-white p-3">col-sm-12 col-md-6 col-lg-3</div>
+      <div class="col-sm-12 col-md-6 col-lg-3 bg-warning p-3">col-sm-12 col-md-6 col-lg-3</div>
+    </div>
+
+    <!-- =================== EJEMPLO 4 =================== -->
+    <h3>Ejemplo 4: Distribución desigual</h3>
+    <div class="row text-center mb-4">
+      <div class="col-8 bg-dark text-white p-3">col-8</div>
+      <div class="col-4 bg-light border p-3">col-4</div>
+    </div>
+
+    <!-- =================== EJEMPLO 5 =================== -->
+    <h3>Ejemplo 5: Columnas anidadas</h3>
+    <div class="row text-center mb-4">
+      <div class="col-6 bg-primary text-white p-3">
+        Columna principal (col-6)
+        <div class="row mt-2">
+          <div class="col-6 bg-warning p-2">Anidada col-6</div>
+          <div class="col-6 bg-success text-white p-2">Anidada col-6</div>
+        </div>
+      </div>
+      <div class="col-6 bg-danger text-white p-3">
+        Otra columna principal (col-6)
+      </div>
+    </div>
+
+    <!-- =================== EJEMPLO 6 =================== -->
+    <h3>Ejemplo 6: Alineación vertical</h3>
+    <p>Podemos usar las clases de alineación <code>align-items-start</code>, <code>align-items-center</code> y <code>align-items-end</code>.</p>
+    <div class="row align-items-center text-center mb-4" style="height: 150px;">
+      <div class="col bg-info p-3">Arriba</div>
+      <div class="col bg-success text-white p-3">Centrado</div>
+      <div class="col bg-warning p-3">Abajo</div>
+    </div>
+
+    <!-- =================== EJEMPLO 7 =================== -->
+    <h3>Ejemplo 7: Alineación horizontal</h3>
+    <p>Con las clases <code>justify-content-start</code>, <code>justify-content-center</code>, <code>justify-content-end</code>, etc.</p>
+    <div class="row justify-content-center text-center mb-4">
+      <div class="col-3 bg-primary text-white p-3">Elemento centrado 1</div>
+      <div class="col-3 bg-danger text-white p-3">Elemento centrado 2</div>
+    </div>
+
+  </div>
+
+  <!-- Script de Bootstrap (opcional para componentes JS) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
