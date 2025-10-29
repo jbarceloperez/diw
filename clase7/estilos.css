@@ -1,0 +1,258 @@
+/* ===== ESTILOS GENERALES ===== */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #f6f6f6;
+    color: #333;
+}
+
+/* ===== CABECERA ===== */
+header {
+    /* background: linear-gradient(90deg, #c59d5f, #e0b97a); */
+    background: linear-gradient(
+      180deg,
+      rgba(94, 64, 0, 0.65),
+      rgba(19, 19, 19, 0.4)
+    ),
+    url("img/heading.jpg") center;
+    text-align: center;
+    color: white;
+    padding: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.slogan {
+    font-style: italic;
+    font-size: 1.1em;
+}
+
+/* ===== MENÚ DE NAVEGACIÓN ===== */
+nav {
+    background-color: #333;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav li {
+    margin: 10px 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s, color 0.3s;
+    padding: 10px;
+}
+
+nav a:hover {
+    background-color: #c59d5f;
+    border-radius: 5px;
+    color: black;
+}
+
+nav ul li a .activo {
+    border-bottom: 2px solid #c59d5f;
+}
+
+/* ===== SECCIÓN HERO ===== */
+.hero {
+    text-align: center;
+    background: linear-gradient(
+      180deg,
+      rgba(141, 141, 141, 0.65),
+      rgba(19, 19, 19, 0.4)
+    ),
+    url('img/hero.jpg') center/cover no-repeat;
+    color: white;
+    padding: 80px 20px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.6);
+}
+
+.hero button {
+    background-color: #c59d5f;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+}
+
+.hero button:hover {
+    background-color: #b5894c;
+    transform: scale(1.1);
+}
+
+/* ===== PRODUCTOS DESTACADOS ===== */
+.destacados {
+    padding: 40px;
+    text-align: center;
+    background-color: white;
+}
+
+.productos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.producto {
+    background-color: #fafafa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    width: 280px;
+    padding: 20px;
+    transition: transform 0.3s;
+}
+
+.producto:hover {
+    transform: translateY(-5px);
+}
+
+.producto img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.producto .precio {
+    color: #c59d5f;
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.producto button {
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.producto button:hover {
+    background-color: #c59d5f;
+    color: black;
+}
+
+/* ===== OFERTAS ===== */
+.ofertas {
+    background: radial-gradient(circle, #f0d9b5, #e0b97a);
+    padding: 50px;
+    text-align: center;
+    color: #333;
+}
+
+.banner-oferta {
+    background-color: white;
+    display: inline-block;
+    padding: 20px 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    animation: parpadeo 3s infinite alternate;
+}
+
+@keyframes parpadeo {
+    0% { box-shadow: 0 0 10px #e98e07; }
+    50% { box-shadow: 0 0 20px #f5c518; }
+    100% { box-shadow: 0 0 30px #ca0303; }
+}
+
+/* ===== GALERÍA ===== */
+.galeria {
+    text-align: center;
+    padding: 40px;
+    background-color: #fff;
+}
+
+.imagenes img {
+    width: 250px;
+    height: 165px;
+    margin: 10px;
+    border-radius: 10px;
+    transition: transform 0.5s;
+}
+
+.imagenes img:hover {
+    transform: rotate(3deg) scale(1.05);
+}
+
+/* ===== FORMULARIO ===== */
+.formulario {
+    background-color: #fafafa;
+    padding: 40px;
+    text-align: center;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+label {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+input[type="submit"] {
+    background-color: #c59d5f;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+input[type="submit"]:hover {
+    background-color: #b5894c;
+}
+
+/* ===== PIE DE PÁGINA ===== */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+footer a {
+    color: #c59d5f;
+    text-decoration: none;
+}
+
+/* ===== MEDIA QUERIES ===== */
+@media (max-width: 900px) {
+    .productos {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 1.5em;
+    }
+
+    .hero {
+        padding: 50px 10px;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+}
