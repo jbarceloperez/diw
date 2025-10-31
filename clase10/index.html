@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Componentes de Bootstrap — Ejemplos y Explicaciones</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+  <div class="container my-4">
+    <h1 class="text-center mb-5">Ejemplos de Componentes Bootstrap</h1>
+
+    <!-- ========================================================= -->
+    <!-- TABLAS -->
+    <!-- ========================================================= -->
+    <section class="mb-5">
+      <h2>1. Tablas (<code>&lt;table&gt;</code>)</h2>
+      <!-- 
+        Bootstrap permite aplicar clases predefinidas a las tablas:
+        - .table: estilo base.
+        - .table-striped: alterna colores entre filas.
+        - .table-bordered: añade bordes.
+        - .table-hover: resalta filas al pasar el ratón.
+        - .table-dark: versión oscura.
+      -->
+      <table class="table table-striped table-hover table-bordered">
+        <thead class="table-dark">
+          <tr>
+            <th>#</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Silla moderna</td>
+            <td>59.99€</td>
+            <td>Disponible</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Mesa de comedor</td>
+            <td>129.99€</td>
+            <td>Pocas unidades</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Lámpara</td>
+            <td>29.99€</td>
+            <td>Agotado</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- ALERTAS -->
+    <!-- ========================================================= -->
+    <section class="mb-5">
+      <h2>2. Alertas (<code>.alert</code>)</h2>
+      <!-- 
+        Clases principales:
+        - .alert + .alert-[color]: Cambia el color según el contexto.
+        - .alert-dismissible: Permite cerrar la alerta con una “x”.
+        - .fade .show: Añade efecto de desaparición.
+      -->
+      <div class="alert alert-primary" role="alert">
+        Esta es una alerta <strong>primary</strong> — informa de algo importante.
+      </div>
+
+      <div class="alert alert-success" role="alert">
+        Acción completada con éxito.
+      </div>
+
+      <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Error:</strong> No se pudo guardar el archivo.
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- BOTONES Y GRUPOS -->
+    <!-- ========================================================= -->
+    <section class="mb-5">
+      <h2>3. Botones y grupos de botones</h2>
+      <!-- 
+        Clases principales:
+        - .btn + .btn-[color]
+        - .btn-outline-[color]: Botones con borde en lugar de fondo.
+        - .btn-lg / .btn-sm: Tamaños.
+        - .btn-group: Agrupa varios botones en una misma línea.
+      -->
+      <div class="mb-3">
+        <button class="btn btn-primary">Primary</button>
+        <button class="btn btn-success">Success</button>
+        <button class="btn btn-outline-danger">Outline Danger</button>
+        <button class="btn btn-warning btn-sm">Pequeño</button>
+        <button class="btn btn-info btn-lg">Grande</button>
+      </div>
+
+      <div class="btn-group" role="group" aria-label="Grupo de botones">
+        <button type="button" class="btn btn-secondary">Izquierda</button>
+        <button type="button" class="btn btn-secondary">Centro</button>
+        <button type="button" class="btn btn-secondary">Derecha</button>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- BADGES -->
+    <!-- ========================================================= -->
+    <section class="mb-5">
+      <h2>4. Badges (<code>&lt;span class="badge"&gt;</code>)</h2>
+      <!-- 
+        Los badges se usan para mostrar contadores o etiquetas pequeñas.
+        Se pueden incluir dentro de botones o encabezados.
+      -->
+      <h4>Ejemplo dentro de un texto: <span class="badge bg-primary">Nuevo</span></h4>
+      <button type="button" class="btn btn-success">
+        Notificaciones <span class="badge bg-light text-dark">4</span>
+      </button>
+
+      <!-- O se pueden poner encima de botones o textos: -->
+      <button type="button" class="btn btn-primary position-relative">
+        Inbox
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            99+
+        </span>
+      </button>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- BARRAS DE PROGRESO -->
+    <!-- ========================================================= -->
+    <section class="mb-5">
+      <h2>5. Barras de progreso (<code>.progress</code>)</h2>
+      <!-- 
+        - .progress: contenedor general.
+        - .progress-bar: barra de progreso.
+        - style="width:X%": controla el porcentaje de llenado.
+        - bg-[color]: color de la barra.
+        - .progress-bar-striped y .progress-bar-animated: animaciones.
+      -->
+      <div class="progress mb-2">
+        <div class="progress-bar bg-success" style="width: 70%;">70%</div>
+      </div>
+      <div class="progress mb-2">
+        <div class="progress-bar bg-warning progress-bar-striped" style="width: 50%;">50%</div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" style="width: 30%;">Cargando...</div>
+      </div>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- SPINNERS -->
+    <!-- ========================================================= -->
+    <section class="mb-5">
+      <h2>6. Spinners (<code>.spinner-border</code> y <code>.spinner-grow</code>)</h2>
+      <!-- 
+        Bootstrap ofrece dos tipos:
+        - spinner-border: borde giratorio.
+        - spinner-grow: círculo que crece y desaparece.
+        Se puede cambiar el color con text-[color] y tamaño con .spinner-border-sm
+      -->
+      <div class="mb-3">
+        <div class="spinner-border text-primary" role="status">
+          <span class="visually-hidden">Cargando...</span>
+        </div>
+        <div class="spinner-border text-danger spinner-border-sm" role="status"></div>
+        <div class="spinner-grow text-success" role="status"></div>
+      </div>
+
+      <button class="btn btn-primary" disabled>
+        <span class="spinner-border spinner-border-sm"></span>
+        Cargando...
+      </button>
+    </section>
+
+    <!-- ========================================================= -->
+    <!-- COLLAPSIBLES -->
+    <!-- ========================================================= -->
+    <section class="mb-5">
+      <h2>7. Elementos colapsables (<code>Collapse</code>)</h2>
+      <!-- 
+        Permiten mostrar/ocultar contenido con un botón.
+        - data-bs-toggle="collapse": activa el efecto.
+        - data-bs-target="#idElemento": indica qué colapsar.
+        - .collapse: clase del contenido que se esconde.
+        - .show: clase que lo mantiene abierto.
+      -->
+      <p>Haz clic en el botón para mostrar/ocultar el texto:</p>
+      <button class="btn btn-secondary mb-2" data-bs-toggle="collapse" data-bs-target="#contenido">
+        Mostrar más información
+      </button>
+
+      <div class="collapse" id="contenido">
+        <div class="card card-body">
+          Este es un ejemplo de texto que se muestra al hacer clic en el botón.
+          Puedes usarlo para mostrar detalles o explicaciones adicionales.
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

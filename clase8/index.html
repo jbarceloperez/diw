@@ -7,10 +7,162 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+    />
     <title>Mi primer Bootstrap</title>
   </head>
   <body>
-    <h1>My bootstrap page</h1>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-md bg-body-tertiary p-2">
+        <div class="container-fluid">
+        <a class="navbar-brand" href="#">Mi pagina bootstrap</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Apuntes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Tareas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Iniciar sesión</a>
+                </li>
+            </ul>
+        </div>
+        </div>
+    </nav>
+
+    <!-- CARRUSEL  -->
+    <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+            <img src="img/slider-1.jpg" class="d-block w-100" alt="Imagen 1" style="max-height: 690px;">
+            </div>
+            <div class="carousel-item">
+            <img src="img/slider-2.jpg" class="d-block w-100" alt="Imagen 2" style="max-height: 690px;">
+            </div>
+            <div class="carousel-item">
+            <img src="img/slider-3.jpg" class="d-block w-100" alt="Imagen 3" style="max-height: 690px;">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- TARJETAS  -->
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="card col-sm-6 col-lg-4 p-5 border-0">
+                <img src="img/card-1.jpg" class="card-img-top rounded-circle" alt="Imagen card 1" style="max-width: 250px;">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card col-sm-6 col-lg-4 p-5 border-0">
+                <img src="img/card-2.jpg" class="card-img-top rounded-circle" alt="Imagen card 1" style="max-width: 250px;">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+            <div class="card col-sm-6 col-lg-4 p-5 border-0">
+                <img src="img/card-3.jpg" class="card-img-top rounded-circle" alt="Imagen card 1" style="max-width: 250px;">
+                <div class="card-body">
+                    <h5 class="card-title">Card title</h5>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
+                    <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- TARJETAS HORIZONTALES  -->
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="card mb-3 border-0">
+                <div class="row g-0">
+                    <div class="col-md-4 p-2">
+                        <img src="img/card-1.jpg" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8">
+                        <div class="card-body">
+                            <h3 class="card-title text-center mb-3">TARJETA HORIZONTAL 1</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere doloremque similique omnis perferendis ipsa nam debitis eos nulla ut corporis, aliquid optio deleniti voluptatum tenetur itaque neque? Saepe, omnis illum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit officiis molestias sunt quaerat, aliquam vel minus odio pariatur libero deserunt vitae perferendis perspiciatis! Repudiandae qui, asperiores suscipit quibusdam laboriosam itaque?</p>
+                            <div class="text-center">
+                                <a class="btn bg-primary btn-lg" href="">Botón de ejemplo</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="card mb-3 border-0">
+                <div class="row g-0">
+                    <div class="col-md-4 p-2 order-1">
+                        <img src="img/card-2.jpg" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-8 order-0">
+                        <div class="card-body">
+                            <h3 class="card-title text-center mb-3">TARJETA HORIZONTAL 1</h3>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Facere doloremque similique omnis perferendis ipsa nam debitis eos nulla ut corporis, aliquid optio deleniti voluptatum tenetur itaque neque? Saepe, omnis illum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit officiis molestias sunt quaerat, aliquam vel minus odio pariatur libero deserunt vitae perferendis perspiciatis! Repudiandae qui, asperiores suscipit quibusdam laboriosam itaque?</p>
+                            <div class="text-center">
+                                <a class="btn bg-primary btn-lg" href="">Botón de ejemplo</a>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- FORMULARIO  -->
+
+    <div class="container mt-5 border border-primary border-1 p-4 rounded-5">
+        <form>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
 
     <div class="container mt-5">
         <div class="row">
@@ -58,13 +210,29 @@
 
 
     <footer class="bg-dark text-white text-center p-4 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <p class="text-light">
+                        <i class="bi bi-envelope-fill"></i> Contacto
+                    </p>
+                </div>
+                <div class="col-4">
+                    <p class="text-light">
+                        <i class="bi bi-facebook"></i> Siguenos en redes
+                    </p>
+                </div>
+                <div class="col-4">
+                    <p class="text-light">
+                        <i class="bi bi-at"></i> Suscribete a nuestro boletín
+                    </p>
+                </div>
+            </div>
+        </div>
+        <br>
         &copy; 2025 Mi Sitio Web con Bootstrap
     </footer>
 
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-      crossorigin="anonymous"
-    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>
