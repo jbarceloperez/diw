@@ -14,7 +14,7 @@
     <!-- ========================================================= -->
     <!-- TABLAS -->
     <!-- ========================================================= -->
-    <section class="mb-5">
+    <section class="mb-5 table-responsive-lg">
       <h2>1. Tablas (<code>&lt;table&gt;</code>)</h2>
       <!-- 
         Bootstrap permite aplicar clases predefinidas a las tablas:
@@ -23,10 +23,19 @@
         - .table-bordered: añade bordes.
         - .table-hover: resalta filas al pasar el ratón.
         - .table-dark: versión oscura.
+        - .table-responsive hace la tabla responsive, hay que darle la clase al contenedor que envuelve la tabla.
       -->
-      <table class="table table-striped table-hover table-bordered">
+      <table class="table table-striped table-hover table-bordered table-primary">
         <thead class="table-dark">
           <tr>
+            <th>#</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Stock</th>
+            <th>#</th>
+            <th>Producto</th>
+            <th>Precio</th>
+            <th>Stock</th>
             <th>#</th>
             <th>Producto</th>
             <th>Precio</th>
@@ -39,14 +48,38 @@
             <td>Silla moderna</td>
             <td>59.99€</td>
             <td>Disponible</td>
+            <td>3</td>
+            <td>Lámpara</td>
+            <td>29.99€</td>
+            <td>Agotado</td>
+            <td>3</td>
+            <td>Lámpara</td>
+            <td>29.99€</td>
+            <td>Agotado</td>
           </tr>
-          <tr>
+          <tr class="table-dark">
             <td>2</td>
             <td>Mesa de comedor</td>
-            <td>129.99€</td>
+            <td class="table-warning">129.99€</td>
             <td>Pocas unidades</td>
+            <td>3</td>
+            <td>Lámpara</td>
+            <td>29.99€</td>
+            <td>Agotado</td>
+            <td>3</td>
+            <td>Lámpara</td>
+            <td>29.99€</td>
+            <td>Agotado</td>
           </tr>
           <tr>
+            <td>3</td>
+            <td>Lámpara</td>
+            <td>29.99€</td>
+            <td>Agotado</td>
+            <td>3</td>
+            <td>Lámpara</td>
+            <td>29.99€</td>
+            <td>Agotado</td>
             <td>3</td>
             <td>Lámpara</td>
             <td>29.99€</td>
@@ -117,7 +150,7 @@
         Los badges se usan para mostrar contadores o etiquetas pequeñas.
         Se pueden incluir dentro de botones o encabezados.
       -->
-      <h4>Ejemplo dentro de un texto: <span class="badge bg-primary">Nuevo</span></h4>
+      <h4>Ejemplo dentro de un texto: <span class="badge bg-primary rounded-pill">Nuevo</span></h4>
       <button type="button" class="btn btn-success">
         Notificaciones <span class="badge bg-light text-dark">4</span>
       </button>
@@ -147,7 +180,7 @@
         <div class="progress-bar bg-success" style="width: 70%;">70%</div>
       </div>
       <div class="progress mb-2">
-        <div class="progress-bar bg-warning progress-bar-striped" style="width: 50%;">50%</div>
+        <div class="progress-bar bg-warning progress-bar-striped progress" style="width: 50%;">50%</div>
       </div>
       <div class="progress">
         <div class="progress-bar bg-info progress-bar-striped progress-bar-animated" style="width: 30%;">Cargando...</div>
@@ -196,7 +229,7 @@
         Mostrar más información
       </button>
 
-      <div class="collapse" id="contenido">
+      <div class="collapse show" id="contenido">
         <div class="card card-body">
           Este es un ejemplo de texto que se muestra al hacer clic en el botón.
           Puedes usarlo para mostrar detalles o explicaciones adicionales.
