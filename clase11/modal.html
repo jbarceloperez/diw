@@ -48,7 +48,7 @@ button {cursor: pointer;}
 
 /* Cabecera y pie */
 .modal-header, .modal-footer {
-  padding: 10px 16px;
+  padding: 3px 16px;
   background-color: #975a0b;
   color: white;
 }
@@ -60,11 +60,11 @@ button {cursor: pointer;}
   from {top: -300px; opacity: 0}
   to {top: 0; opacity: 1}
 }
-#modal1 .modal-content {animation: animatetop 0.4s;}
+#modal1 .modal-content {animation: animatetop 0.5s;}
 
 /* ===== Modal Fade-In ===== */
 @keyframes fadeIn {
-  from {opacity: 0; transform: scale(0.9);}
+  from {opacity: 0; transform: scale(0.5);}
   to {opacity: 1; transform: scale(1);}
 }
 #modal2 .modal-content {
@@ -145,9 +145,9 @@ button {cursor: pointer;}
     <div class="modal-body">
       <p>Este es el modal original con animación desde arriba.</p>
     </div>
-    <div class="modal-footer">
+    <!-- <div class="modal-footer">
       <h4>Pie de modal</h4>
-    </div>
+    </div> -->
   </div>
 </div>
 
