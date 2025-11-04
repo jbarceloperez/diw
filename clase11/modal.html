@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<title>Ejemplos de Modales en HTML, CSS y JS</title>
+
+<style>
+body {font-family: Arial, Helvetica, sans-serif; margin-left: 50px;}
+button {cursor: pointer;}
+
+/* Fondo oscuro general de todos los modales */
+.modal-fondo {
+  display: none;
+  position: fixed;
+  padding-top: 100px;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 1000;
+}
+
+/* Estilo base del contenedor del modal */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 2px solid #6b6b6ba6;
+  width: 50%;
+  min-width: 400px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/* Botón de cierre */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Cabecera y pie */
+.modal-header, .modal-footer {
+  padding: 10px 16px;
+  background-color: #975a0b;
+  color: white;
+}
+.modal-footer {background-color: rgb(128, 95, 64);}
+.modal-body {padding: 16px;}
+
+/* Animación del modal original */
+@keyframes animatetop {
+  from {top: -300px; opacity: 0}
+  to {top: 0; opacity: 1}
+}
+#modal1 .modal-content {animation: animatetop 0.4s;}
+
+/* ===== Modal Fade-In ===== */
+@keyframes fadeIn {
+  from {opacity: 0; transform: scale(0.9);}
+  to {opacity: 1; transform: scale(1);}
+}
+#modal2 .modal-content {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* ===== Modal Login ===== */
+#modalLogin .modal-content {
+  width: 30%;
+  min-width: 300px;
+  animation: fadeIn 0.4s ease-in-out;
+}
+#modalLogin input[type=text],
+#modalLogin input[type=password] {
+  width: 95%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+#modalLogin button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+}
+
+/* ===== Modal Galería ===== */
+#modalGallery .modal-content {
+  max-width: 700px;
+  text-align: center;
+  background-color: #222;
+  color: white;
+}
+#modalGallery img {
+  width: 100%;
+  border-radius: 6px;
+}
+.gallery-thumbs {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+}
+
+.gallery-thumbs img {
+  width: 100px;
+  height: 70px;
+  object-fit: cover;
+  margin: 5px;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+.gallery-thumbs img:hover {
+  border-color: #fff;
+}
+</style>
+</head>
+<body>
+
+<h1>Ejemplos de Modales en HTML, CSS y JS</h1>
+<p>Estos ejemplos muestran diferentes formas de usar ventanas modales. <a href="modalBootstrap.html">Versión Bootstrap</a></p>
+
+<!-- Botones de apertura -->
+<button id="btn1">Abrir Modal con animación superior</button>
+<button id="btn2">Abrir Modal con Fade-In</button>
+<button id="btnLogin">Abrir Modal de Login</button>
+<button id="btnGallery">Abrir Modal de Galería</button>
+
+<!-- ====================================================== -->
+<!-- Modal 1 - El original (animación superior) -->
+<div id="modal1" class="modal-fondo">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h3>Modal clásico (animación superior)</h3>
+    </div>
+    <div class="modal-body">
+      <p>Este es el modal original con animación desde arriba.</p>
+    </div>
+    <div class="modal-footer">
+      <h4>Pie de modal</h4>
+    </div>
+  </div>
+</div>
+
+<!-- ====================================================== -->
+<!-- Modal 2 - Fade-In -->
+<div id="modal2" class="modal-fondo">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h3>Modal con efecto Fade-In</h3>
+    </div>
+    <div class="modal-body">
+      <p>Este modal aparece con una animación suave de opacidad.</p>
+      <p>Los modales pueden tener diferentes estilos de aparición.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ====================================================== -->
+<!-- Modal 3 - Formulario de Login -->
+<div id="modalLogin" class="modal-fondo">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h3>Iniciar Sesión</h3>
+    </div>
+    <div class="modal-body">
+      <form>
+        <label>Usuario:</label>
+        <input type="text" placeholder="Introduce tu nombre de usuario">
+        <label>Contraseña:</label>
+        <input type="password" placeholder="Introduce tu contraseña">
+        <button type="submit">Entrar</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- ====================================================== -->
+<!-- Modal 4 - Galería de imágenes -->
+<div id="modalGallery" class="modal-fondo">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h3>Galería de Fotos</h3>
+    </div>
+    <div class="modal-body">
+      <img id="mainImage" src="https://picsum.photos/id/1018/600/400" alt="Galería principal">
+      <div class="gallery-thumbs">
+        <img src="https://picsum.photos/id/1018/200/140" onclick="changeImage(this.src)">
+        <img src="https://picsum.photos/id/1015/200/140" onclick="changeImage(this.src)">
+        <img src="https://picsum.photos/id/1025/200/140" onclick="changeImage(this.src)">
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* Función auxiliar para cambiar imagen en galería */
+function changeImage(src) {
+  document.getElementById("mainImage").src = src.replace('/200/140', '/600/400');
+}
+
+/* Función genérica para abrir y cerrar modales */
+function prepararModal(btnId, modalId) {
+  var modal = document.getElementById(modalId);
+  var btn = document.getElementById(btnId);
+  var span = modal.getElementsByClassName("close")[0];
+
+  btn.onclick = function() {
+    modal.style.display = "block";
+  }
+  span.onclick = function() {
+    modal.style.display = "none";
+  }
+  window.addEventListener('click', function(e) {
+    if (e.target == modal) modal.style.display = "none";
+  });
+}
+
+/* Asociamos cada botón a su modal */
+prepararModal("btn1", "modal1");
+prepararModal("btn2", "modal2");
+prepararModal("btnLogin", "modalLogin");
+prepararModal("btnGallery", "modalGallery");
+</script>
+
+</body>
+</html>
