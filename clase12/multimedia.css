@@ -1,0 +1,61 @@
+:root{
+  --bg: #f7f9fb;
+  --panel: #ffffff;
+  --accent: #0b6fa4;
+  --muted: #6b7280;
+}
+
+*{box-sizing: border-box}
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin:0;
+  background:var(--bg);
+  color:#111827;
+  line-height:1.45;
+  padding-bottom:3rem;
+}
+
+.container{max-width:1100px;margin:1.5rem auto;padding:0 1rem;}
+.site-header{text-align:center;padding:1.25rem 0 0.5rem}
+.site-header .lead{color:var(--muted);margin-top:0.25rem}
+
+.panel{
+  background:var(--panel);
+  border-radius:10px;
+  padding:1rem 1.25rem;
+  margin:1rem 0;
+  box-shadow: 0 6px 18px rgba(11,111,164,0.06);
+}
+
+/* Grid simple para imágenes */
+.grid-3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}
+figure{margin:0}
+figure img{display:block;width:100%;height:auto;border-radius:8px}
+figcaption{font-size:.9rem;color:var(--muted);margin-top:.4rem}
+
+/* Picture note */
+.note{font-size:.9rem;color:var(--muted);margin-top:.5rem}
+
+/* SVG */
+#logo-svg{display:block;margin:1rem 0;}
+
+/* Player styles */
+.player{background:#fcfeff;border-radius:8px;padding:.8rem;margin-top:.6rem;box-shadow:0 2px 8px rgba(2,6,23,0.04)}
+.controls{display:flex;gap:.6rem;align-items:center;flex-wrap:wrap}
+.controls .btn{background:var(--accent);color:white;border:none;padding:.45rem .7rem;border-radius:6px;cursor:pointer}
+.controls label{font-size:.9rem;color:var(--muted)}
+
+/* Buttons base */
+.btn{background:#efefef;border:1px solid #ddd;padding:.4rem .6rem;border-radius:6px;cursor:pointer}
+.btn:hover{filter:brightness(.98);transform:translateY(-1px);transition:all .18s ease}
+
+/* Responsive and media queries */
+@media (max-width:800px){
+  .controls{flex-direction:column;align-items:flex-start}
+  video, audio{width:100%}
+  .grid-3{grid-template-columns:1fr}
+}
+
+/* Small utilities */
+.lead{font-size:1.05rem}
+.site-footer{text-align:center;padding:1rem;color:var(--muted);font-size:.95rem;margin-top:1.5rem}

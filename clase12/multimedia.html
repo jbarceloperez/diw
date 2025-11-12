@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Ejemplo didáctico: Imágenes, SVG, Audio y Vídeo en HTML5</title>
+  <link rel="stylesheet" href="multimedia.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Multimedia en HTML5 — Ejemplos y controles</h1>
+    <p class="lead">Imágenes (JPG, PNG, GIF, WebP, SVG), <code>&lt;audio&gt;</code>, <code>&lt;video&gt;</code> y APIs JS</p>
+  </header>
+
+  <main class="container">
+
+    <!-- =================================================================== -->
+    <!-- 1. IMÁGENES: formatos & responsividad -->
+    <!-- =================================================================== -->
+    <section id="imagenes" class="panel">
+      <h2>1) Formatos de imagen y uso práctico</h2>
+      <p>Mostramos distintos formatos y técnicas: etiquetas <code>&lt;img&gt;</code>, <code>&lt;picture&gt;</code>, <code>srcset</code>, y SVG inline.</p>
+
+      <div class="grid-3">
+        <!-- JPEG (fotografía) -->
+        <figure>
+          <img src="https://picsum.photos/id/1015/600/400" alt="Fotografía ejemplo (JPEG)" width="600" height="400" loading="lazy">
+          <figcaption>JPEG (ideal para fotos): alta compresión con pérdida.</figcaption>
+        </figure>
+
+        <!-- PNG (transparencia) -->
+        <figure>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Lion_waiting_in_Namibia.jpg" alt="Ejemplo PNG/JPG" width="600" height="400" loading="lazy">
+          <figcaption>PNG (sin pérdida, transparencia). Útil para logos y gráficos.</figcaption>
+        </figure>
+
+        <!-- GIF (animación) -->
+        <figure>
+          <img src="https://media.giphy.com/media/26gssIytJvy1b1THO/giphy.gif" alt="Ejemplo GIF animado" width="300" height="169" loading="lazy">
+          <figcaption>GIF (animación básica, 256 colores — para animaciones cortas).</figcaption>
+        </figure>
+      </div>
+
+      <hr>
+
+      <!-- WebP + fallback con picture -->
+      <h3>Imagen responsive: <code>&lt;picture&gt;</code> + WebP + fallback</h3>
+      <p>Usamos <code>&lt;picture&gt;</code> para entregar WebP cuando el navegador lo soporta y JPEG de fallback.</p>
+      <picture>
+        <!-- WebP preferente -->
+        <source srcset="https://picsum.photos/id/1018/1200/800.webp" type="image/webp">
+        <!-- JPG fallback -->
+        <source srcset="https://picsum.photos/id/1018/1200/800.jpg" type="image/jpeg">
+        <img src="https://picsum.photos/id/1018/1200/800.jpg" alt="Paisaje ejemplo (WebP/JPG fallback)" width="1200" height="800" loading="lazy">
+      </picture>
+      <p class="note">WebP suele reducir tamaño manteniendo calidad — recomendable para producción.</p>
+
+      <hr>
+
+      <h3>SVG: vector, escalable e interactivo</h3>
+      <p>A continuación un SVG inline que podemos estilizar con CSS y manipular con JS si lo deseamos.</p>
+
+      <!-- SVG inline (editable con CSS/JS) -->
+      <svg id="logo-svg" width="300" height="120" viewBox="0 0 200 120" aria-labelledby="svgTitle svgDesc" role="img">
+        <title id="svgTitle">Logo de ejemplo en SVG</title>
+        <desc id="svgDesc">Un círculo y texto que demostrará estilos y animaciones CSS</desc>
+
+        <!-- Fondo redondeado -->
+        <rect x="0" y="0" width="300" height="120" rx="12" fill="#0b6fa4"></rect>
+
+        <!-- Círculo 'sonido' -->
+        <g id="rings" transform="translate(50,60)">
+          <circle cx="0" cy="0" r="6" fill="#fff" opacity="0.95"></circle>
+          <circle cx="0" cy="0" r="28" fill="none" stroke="#7fd1ff" stroke-width="8.5" class="ring"></circle>
+          <circle cx="0" cy="0" r="16" fill="none" stroke="#a7e3ff" stroke-width="10" class="ring"></circle>
+          
+        </g>
+
+        <!-- Texto -->
+        <text x="90" y="68" fill="#fff" font-family="Verdana" font-size="20">SoundWave</text>
+      </svg>
+
+      <p class="note">SVG se puede incrustar como fichero <code>&lt;img src="icon.svg"&gt;</code> o inline para manipulación.</p>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- 2. AUDIO: etiquetas, formatos y control con JS -->
+    <!-- =================================================================== -->
+    <section id="audio" class="panel">
+      <h2>2) Audio en HTML5 — etiquetas y API</h2>
+      <p>Ejemplo con varias fuentes para compatibilidad y controles personalizados.</p>
+
+      <!-- Reproductor nativo simple -->
+      <h3>Reproductor nativo (con controles del navegador)</h3>
+      <audio id="audio-native" controls preload="metadata">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.ogg" type="audio/ogg">
+        Tu navegador no soporta audio.
+      </audio>
+
+      <hr>
+
+      <!-- Reproductor personalizado (JS) -->
+      <h3>Reproductor personalizado (controlado por JS)</h3>
+      <div class="player">
+        <audio id="audio-js" preload="metadata">
+          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+          <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.ogg" type="audio/ogg">
+          No soportado.
+        </audio>
+
+        <div class="controls">
+          <button id="playPauseAudio" class="btn">Play</button>
+          <button id="stopAudio" class="btn">Stop</button>
+          <label>Vol: <input id="volumeAudio" type="range" min="0" max="1" step="0.01" value="0.8"></label>
+          <label>Pos: <input id="tiempoAudio" type="range" min="0" max="100" value="0"></label>
+          <span id="timeAudio">0:00 / 0:00</span>
+        </div>
+      </div>
+
+      <p class="note">
+        Eventos útiles: <code>play</code>, <code>pause</code>, <code>timeupdate</code>, <code>ended</code>.
+        Con la Web Audio API se puede crear visualizadores (FFT, analizador), pero requiere más código.
+      </p>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- 3. VÍDEO: formatos, subtítulos y API -->
+    <!-- =================================================================== -->
+    <section id="video" class="panel">
+      <h2>3) Vídeo en HTML5 — etiquetas, pistas y APIs</h2>
+
+      <h3>Vídeo básico con múltiples fuentes y poster</h3>
+      <video id="video-native" width="720" controls preload="metadata" poster="https://picsum.photos/id/1016/720/400">
+        <!-- MP4 (H.264) -> amplia compatibilidad -->
+        <source src="vid/mov_bbb.mp4" type="video/mp4">
+        Tu navegador no soporta vídeo.
+      </video>
+
+      <hr>
+
+      <h3>Controles personalizados para el vídeo (play/pause, seek, PiP)</h3>
+      <div class="player">
+        <video id="video-js" width="640" preload="metadata" poster="https://picsum.photos/id/1019/640/360">
+          <source src="vid/mov_bbb.mp4" type="video/mp4">
+          Tu navegador no soporta vídeo.
+        </video>
+
+        <div class="controls">
+          <button id="playPauseVideo" class="btn">Play</button>
+          <button id="muteVideo" class="btn">Mute</button>
+          <label>Vol: <input id="volumeVideo" type="range" min="0" max="1" step="0.01" value="1"></label>
+          <label>Seek: <input id="seekVideo" type="range" min="0" max="100" value="0"></label>
+          <button id="pipBtn" class="btn">Picture-in-Picture</button>
+          <button id="fsBtn" class="btn">Fullscreen</button>
+          <span id="timeVideo">0:00 / 0:00</span>
+        </div>
+      </div>
+
+      <p class="note">
+        Eventos útiles del video: <code>loadedmetadata</code>, <code>timeupdate</code>, <code>ended</code>.  
+        Para subtítulos, usa archivos WebVTT y la etiqueta <code>&lt;track&gt;</code>.  
+        Para accesibilidad, añade <code>caption</code> y transcripciones si es necesario.
+      </p>
+    </section>
+
+    <!-- =================================================================== -->
+    <!-- 4. BUENAS PRÁCTICAS Y OPTIMIZACIONES -->
+    <!-- =================================================================== -->
+    <section id="buenas" class="panel">
+      <h2>4) Buenas prácticas & optimización</h2>
+      <ul>
+        <li>Comprimir imágenes y usar <strong>WebP</strong> cuando sea posible.</li>
+        <li>Usar <code>loading="lazy"</code> para imágenes no críticas. </li>
+        <li>Servir varios formatos con <code>&lt;picture&gt;</code> y <code>&lt;source&gt;</code>.</li>
+        <li>Evitar <code>autoplay</code> sin <code>muted</code> (políticas de los navegadores).</li>
+        <li>Ofrecer subtítulos y texto alternativo para accesibilidad.</li>
+        <li>Respetar licencias y atribuir autores.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>Ejemplo multimedia - Clase Desarrollo de Interfaces Web</p>
+  </footer>
+
+  <!-- =============================== -->
+  <!-- SCRIPTS: control de audio y vídeo -->
+  <!-- =============================== -->
+  <script>
+  /* ----------------------------
+     AUDIO: reproductor personalizado
+     ---------------------------- */
+  (function(){
+    const audio = document.getElementById('audio-js');
+    const btnPlay = document.getElementById('playPauseAudio');
+    const btnStop = document.getElementById('stopAudio');
+    const vol = document.getElementById('volumeAudio');
+    const tiempo = document.getElementById('tiempoAudio');
+    const timeLabel = document.getElementById('timeAudio');
+
+    // Actualizar duración cuando estén disponibles metadatos
+    audio.addEventListener('loadedmetadata', () => {
+      updateTimeLabel();
+    });
+
+    // Play / Pause
+    btnPlay.addEventListener('click', () => {
+      if (audio.paused) {
+        audio.play();
+        btnPlay.textContent = 'Pause';
+      } else {
+        audio.pause();
+        btnPlay.textContent = 'Play';
+      }
+    });
+
+    // Stop -> pausa y pone a 0
+    btnStop.addEventListener('click', () => {
+      audio.pause();
+      audio.currentTime = 0;
+      btnPlay.textContent = 'Play';
+    });
+
+    // Volumen
+    vol.addEventListener('input', () => {
+      audio.volume = parseFloat(vol.value);
+    });
+
+    // Actualizar seek max y posición
+    audio.addEventListener('timeupdate', () => {
+      if (!isNaN(audio.duration)) {
+        tiempo.max = Math.floor(audio.duration);
+        tiempo.value = Math.floor(audio.currentTime);
+        updateTimeLabel();
+      }
+    });
+
+    // Mover posición desde el range
+    tiempo.addEventListener('input', () => {
+      audio.currentTime = parseFloat(tiempo.value);
+    });
+
+    function formatTime(seconds) {
+      if (isNaN(seconds)) return '0:00';
+      const m = Math.floor(seconds / 60);
+      const s = Math.floor(seconds % 60).toString().padStart(2,'0');
+      return `${m}:${s}`;
+    }
+
+    function updateTimeLabel(){
+      timeLabel.textContent = `${formatTime(audio.currentTime)} / ${formatTime(audio.duration)}`;
+    }
+
+    // Evento al terminar pista
+    audio.addEventListener('ended', () => {
+      btnPlay.textContent = 'Play';
+      alert('Pista finalizada');
+    });
+  })();
+
+  /* ----------------------------
+     VIDEO: controles personalizados
+     ---------------------------- */
+  (function(){
+    const video = document.getElementById('video-js');
+    const playBtn = document.getElementById('playPauseVideo');
+    const muteBtn = document.getElementById('muteVideo');
+    const vol = document.getElementById('volumeVideo');
+    const seek = document.getElementById('seekVideo');
+    const timeLabel = document.getElementById('timeVideo');
+    const pipBtn = document.getElementById('pipBtn');
+    const fsBtn = document.getElementById('fsBtn');
+
+    video.addEventListener('loadedmetadata', () => {
+      updateTimeLabel();
+    });
+
+    // Play / Pause
+    playBtn.addEventListener('click', () => {
+      if (video.paused) {
+        video.play();
+        playBtn.textContent = 'Pause';
+      } else {
+        video.pause();
+        playBtn.textContent = 'Play';
+      }
+    });
+
+    // Mute
+    muteBtn.addEventListener('click', () => {
+      video.muted = !video.muted;
+      muteBtn.textContent = video.muted ? 'Unmute' : 'Mute';
+    });
+
+    // Volume
+    vol.addEventListener('input', () => {
+      video.volume = parseFloat(vol.value);
+    });
+
+    // Seek update
+    video.addEventListener('timeupdate', () => {
+      if (!isNaN(video.duration)) {
+        seek.max = Math.floor(video.duration);
+        seek.value = Math.floor(video.currentTime);
+        updateTimeLabel();
+      }
+    });
+
+    seek.addEventListener('input', () => {
+      video.currentTime = parseFloat(seek.value);
+    });
+
+    // Picture-in-Picture (solo si el navegador lo soporta)
+    pipBtn.addEventListener('click', async () => {
+      if ('pictureInPictureEnabled' in document) {
+        try {
+          if (document.pictureInPictureElement) {
+            await document.exitPictureInPicture();
+          } else {
+            await video.requestPictureInPicture();
+          }
+        } catch (err) {
+          alert('Error PiP: ' + err.message);
+        }
+      } else {
+        alert('Picture-in-Picture no soportado en este navegador.');
+      }
+    });
+
+    // Fullscreen
+    fsBtn.addEventListener('click', async () => {
+      try {
+        if (!document.fullscreenElement) {
+          await video.requestFullscreen();
+        } else {
+          await document.exitFullscreen();
+        }
+      } catch (err) {
+        console.warn('Fullscreen error', err);
+      }
+    });
+
+    // Formatea tiempo
+    function formatTime(seconds) {
+      if (isNaN(seconds)) return '0:00';
+      const m = Math.floor(seconds / 60);
+      const s = Math.floor(seconds % 60).toString().padStart(2,'0');
+      return `${m}:${s}`;
+    }
+    function updateTimeLabel(){
+      timeLabel.textContent = `${formatTime(video.currentTime)} / ${formatTime(video.duration)}`;
+    }
+
+    // Evento al terminar video
+    video.addEventListener('ended', () => {
+      playBtn.textContent = 'Play';
+      alert('El vídeo ha terminado.');
+    });
+  })();
+
+  // Pequeña mejora: animación en SVG (añadimos/quitamos clase)
+  (function(){
+    const rings = document.querySelectorAll('#logo-svg .ring');
+    // Añadimos animación CSS desde JS (alternar)
+    setInterval(() => {
+      rings.forEach((r,i) => {
+        //r.style.strokeDasharray = (i % 2 === 0) ? '1,200' : '6,100';
+        r.style.opacity = Math.random() * 0.9 + 0.2;
+      });
+    }, 1200);
+  })();
+  </script>
+
+</body>
+</html>
